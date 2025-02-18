@@ -117,6 +117,18 @@ input, textarea {
   border-radius: 0.3em;
 }
 
+/* Ensure email and subject fields are the same size */
+input[type="email"],
+input[type="text"] {
+  height: 2.5em; /* Same height for email and subject */
+}
+
+/* Make the message box double the height */
+textarea {
+  height: 5em; /* Double the height of input fields */
+  resize: vertical; /* Allow vertical resizing */
+}
+
 button {
   grid-column: 1 / -1;
   padding: 0.7em;
