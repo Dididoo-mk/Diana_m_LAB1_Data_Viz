@@ -94,16 +94,14 @@ h1 {
 /* Contact Form Styling */
 form {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: 1fr;
   gap: 1em;
   max-width: 40rem;
   margin: auto;
 }
 
 label {
-  display: grid;
-  grid-template-columns: subgrid;
-  grid-column: 1 / -1;
+  display: block;
   font-weight: bold;
   margin-block: 0.5em;
 }
@@ -119,18 +117,18 @@ input, textarea, button {
 
 /* Ensure email and subject fields are the same size */
 input[type="email"],
-input[type="text"] {
-  height: 2.5em; /* Same height for email and subject */
+input[type="text"],
+button {
+  height: 3em; /* Match height with button */
 }
 
 /* Make the message box double the height */
 textarea {
-  height: 5em; /* Double the height of input fields */
+  height: 6em; /* Double the height of input fields */
   resize: vertical; /* Allow vertical resizing */
 }
 
 button {
-  grid-column: 1 / -1;
   padding: 0.7em;
   font: inherit;
   background-color: var(--color-accent);
