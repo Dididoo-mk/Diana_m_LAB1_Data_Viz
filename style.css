@@ -17,3 +17,44 @@ body {
   background-color: #f9f9f9;
   color: #333;
 }
+
+
+/* Define global color variables */
+:root {
+  --color-accent: oklch(65% 50% 0);
+  --border-gray: oklch(80% 3% 200);
+}
+
+html {
+  accent-color: var(--color-accent);
+}
+
+/* Navigation styling */
+nav {
+  display: flex; /* Enable flexbox */
+  justify-content: space-around; /* Space links evenly */
+  align-items: center; /* Center items vertically */
+  padding: 1em 0;
+  border-bottom: 1px solid var(--border-gray); /* Subtle gray border */
+  margin-bottom: 1em;
+}
+
+nav a {
+  flex: 1; /* Each link takes equal space */
+  text-decoration: none; /* Remove underlines */
+  color: inherit; /* Inherit text color */
+  text-align: center; /* Center text */
+  padding: 0.5em; /* Add spacing */
+}
+
+/* Highlight current page link */
+nav a.current {
+  border-bottom: 0.4em solid var(--border-gray);
+  padding-bottom: 0.2em;
+}
+
+/* Navigation hover effects */
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+}
