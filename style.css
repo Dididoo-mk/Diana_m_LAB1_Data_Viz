@@ -53,10 +53,40 @@ nav a:hover {
   background-color: oklch(from var(--color-accent) 95% 5% h);
 }
 
-/* Example usage in HTML:
-<a href="index.html" class="current">Home</a>
-<a href="projects/index.html">Projects</a>
-<a href="contact/index.html">Contact</a>
-<a href="resume/index.html">Resume</a>
-<a href="https://github.com/Dididoo-mk" target="_blank">GitHub</a>
-*/
+/* Projects Page Styling */
+.projects {
+  display: grid; /* Enables grid layout */
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr)); /* Responsive grid */
+  gap: 1em; /* Space between grid items */
+  padding: 1em 0;
+}
+
+.projects article {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3;
+  background: white;
+  padding: 1em;
+  border: 1px solid var(--border-gray);
+  border-radius: 0.5em;
+}
+
+.projects h2 {
+  font-size: 1.5em;
+  margin: 0;
+  line-height: 1.1;
+  text-wrap: balance;
+}
+
+.projects img {
+  max-width: 100%; /* Ensures images don't stretch */
+  height: auto;
+  display: block;
+}
+
+/* Adjusting global heading styles */
+h1 {
+  font-size: 4em; /* Make main heading larger */
+  line-height: 1.1;
+  text-wrap: balance;
+}
