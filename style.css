@@ -108,9 +108,9 @@ label {
   margin-block: 0.5em;
 }
 
-input, textarea {
+input, textarea, button {
   font: inherit;
-  width: 100%;
+  width: 100%; /* Ensure all elements take up full width */
   box-sizing: border-box;
   padding: 0.5em;
   border: 1px solid var(--border-gray);
@@ -138,8 +138,4 @@ button {
   border: none;
   border-radius: 0.3em;
   cursor: pointer;
-}
-
-button:hover {
-  background-color: oklch(from var(--color-accent) 80% 40% h);
 }
