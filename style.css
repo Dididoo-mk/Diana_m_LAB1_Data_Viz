@@ -22,7 +22,7 @@ body {
 :root {
   --color-accent: oklch(65% 50% 0);
   --border-gray: oklch(80% 3% 200);
-  --current-page-color: oklch(70% 20% 50); /* Adjusted for distinct highlight */
+  --current-page-color: oklch(50% 70% 20); /* More distinct highlight */
 }
 
 html {
@@ -37,6 +37,7 @@ nav {
   padding: 1em 0;
   border-bottom: 1px solid var(--border-gray); /* Subtle gray border */
   margin-bottom: 1em;
+  background-color: #ffffff; /* Add background to improve contrast */
 }
 
 nav a {
@@ -45,17 +46,21 @@ nav a {
   color: inherit; /* Inherit text color */
   text-align: center; /* Center text */
   padding: 0.5em; /* Add spacing */
+  transition: all 0.3s ease-in-out; /* Smooth transition for effects */
 }
 
 /* Highlight current page link */
 nav a.current {
   color: var(--current-page-color); /* Distinct color for current page */
-  border-bottom: 0.4em solid var(--border-gray); /* Thicker underline */
-  padding-bottom: 0.2em; /* Reduce padding to compensate */
+  border-bottom: 0.4em solid var(--color-accent); /* Thicker, more visible underline */
+  font-weight: bold; /* Make text bold for extra emphasis */
+  background-color: oklch(from var(--color-accent) 95% 5% h); /* Light background for contrast */
+  padding-bottom: 0.3em; /* Reduce padding to compensate for border */
 }
 
 /* Navigation hover effects */
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: oklch(from var(--color-accent) 90% 10% h);
+  color: var(--color-accent); /* Change text color on hover */
 }
