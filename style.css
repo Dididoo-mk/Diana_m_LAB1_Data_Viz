@@ -18,11 +18,11 @@ body {
   color: #333;
 }
 
-
 /* Define global color variables */
 :root {
   --color-accent: oklch(65% 50% 0);
   --border-gray: oklch(80% 3% 200);
+  --current-page-color: oklch(70% 20% 50); /* Adjusted for distinct highlight */
 }
 
 html {
@@ -49,8 +49,9 @@ nav a {
 
 /* Highlight current page link */
 nav a.current {
-  border-bottom: 0.4em solid var(--border-gray);
-  padding-bottom: 0.2em;
+  color: var(--current-page-color); /* Distinct color for current page */
+  border-bottom: 0.4em solid var(--border-gray); /* Thicker underline */
+  padding-bottom: 0.2em; /* Reduce padding to compensate */
 }
 
 /* Navigation hover effects */
