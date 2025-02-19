@@ -149,51 +149,48 @@ button {
 }
 
 .resume h1 {
-  color: #333; /* Keep main text color neutral */
+  color: #333;
   text-align: center;
 }
 
-.resume h2 {
-  color: var(--color-accent);
-  margin-bottom: 0.5em;
-}
-
-.resume p, .resume ul {
-  color: #333;
-  line-height: 1.5;
-}
-
-.resume ul {
-  padding-left: 1.5em;
-}
-
-.resume a {
-  color: var(--color-accent);
-  text-decoration: none;
-  font-weight: bold;
-}
-
-.resume a:hover {
-  text-decoration: underline;
-}
-
-/* Styled section blocks */
-.resume section {
+/* Interactive Resume Sections */
+.resume-section {
   background-color: #f9f9f9;
   padding: 1.5em;
   border-radius: 0.8em;
   margin-bottom: 1.5em;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.resume-section:hover {
+  background-color: #e0e0e0;
+}
+
+.resume-section h2 {
+  margin: 0;
+  color: var(--color-accent);
+}
+
+.resume-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.5s ease-in-out;
+}
+
+.resume-section:hover .resume-content {
+  max-height: 500px;
 }
 
 /* Centered Download Resume Button */
-.resume .download-resume {
+.download-resume {
   text-align: center;
   margin-top: 2em;
   padding: 2em 0;
 }
 
-.resume .download-resume a {
+.download-resume a {
   display: inline-block;
   padding: 1em 2em;
   background-color: #ff69b4; /* Pink button */
@@ -205,6 +202,6 @@ button {
   transition: background-color 0.3s ease-in-out;
 }
 
-.resume .download-resume a:hover {
+.download-resume a:hover {
   background-color: #ff4786;
 }
