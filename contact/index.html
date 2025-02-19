@@ -1,38 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    
-
-
-<link rel="stylesheet" href="../style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact</title>
+  <link rel="stylesheet" href="../style.css">
 </head>
 <body>
-    
-    <h1>Contact</h1>
+  <h1>Contact</h1>
 
-    <nav>
-        <a href="../index.html">Home</a>
-        <a href="../projects/index.html">Projects</a>
-        <a href="index.html" class="current">Contact</a>
-        <a href="../resume/index.html">Resume</a>
-        <a href="https://github.com/Dididoo-mk" target="_blank">GitHub</a>
-    </nav>
-    
+  <nav>
+    <a href="../index.html">Home</a>
+    <a href="../projects/index.html">Projects</a>
+    <a href="index.html" class="current">Contact</a>
+    <a href="../resume/index.html">Resume</a>
+    <a href="https://github.com/Dididoo-mk" target="_blank">GitHub</a>
+  </nav>
+  
+  <!-- Wrap the form in a .contact-form container -->
+  <div class="contact-form">
     <form action="mailto:diana_mk@mit.edu" method="GET">
-        <label for="email">Your Email:</label>
-        <input type="email" id="email" name="email" value="your@email.com" required><br><br>
-        
-        <label for="subject">Subject:</label>
-        <input type="text" id="subject" name="subject" value="Default Subject" required><br><br>
-        
-        <label for="body">Message:</label>
-        <textarea id="body" name="body" rows="5" cols="30">Your message here...</textarea><br><br>
-        
-        <button type="submit">Send Email</button>
+      <label for="email">Your Email:</label>
+      <input type="email" id="email" name="email" value="your@email.com"
+             required>
+      
+      <label for="subject">Subject:</label>
+      <input type="text" id="subject" name="subject" value="Default Subject"
+             required>
+      
+      <label for="body">Message:</label>
+      <textarea id="body" name="body">Your message here...</textarea>
+      
+      <button type="submit">Send Email</button>
     </form>
-
+  </div>
+  
 </body>
 </html>

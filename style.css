@@ -98,22 +98,21 @@ nav a:hover {
   font: inherit;
 }
 
-/* -- New Grid Layout for Contact Form -- */
-/* Use a single-column grid so each label is above its control */
+/* --- Updated Contact Form Grid Layout --- */
+/* Remove any <br> elements from the HTML to let grid spacing work properly */
 .contact-form form {
   display: grid;
-  grid-template-columns: 1fr;
   gap: 1em;
 }
 
-/* Labels (for clarity) */
+/* Labels appear above their controls */
 .contact-form form label {
   display: block;
   font-weight: bold;
   margin-bottom: 0.5rem;
 }
 
-/* Inputs and textarea take full width and have consistent box sizing */
+/* Inputs and textarea take full width with consistent sizing */
 .contact-form form input,
 .contact-form form textarea {
   display: block;
@@ -125,9 +124,8 @@ nav a:hover {
 }
 
 /* Set fixed heights:
-   - Email and Subject fields (inputs) get a standard height.
-   - The Message textarea is double that height.
-*/
+   - Email and Subject inputs: 2.5rem height
+   - Message textarea: 5rem height (double) */
 .contact-form form input[type="email"],
 .contact-form form input[type="text"] {
   height: 2.5rem;
