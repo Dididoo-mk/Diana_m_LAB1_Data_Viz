@@ -151,21 +151,17 @@ button {
 .resume h1 {
   color: #333;
   text-align: center;
+  font-size: 1.8em; /* Make Diana Mykhaylychenko smaller */
 }
 
-/* Interactive Resume Sections */
+/* Styled Resume Sections */
 .resume-section {
   background-color: #f9f9f9;
   padding: 1.5em;
   border-radius: 0.8em;
   margin-bottom: 1.5em;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
-  cursor: pointer;
-  transition: background-color 0.3s ease-in-out;
-}
-
-.resume-section.active {
-  background-color: #e0e0e0;
+  border: 1px solid rgba(0, 0, 0, 0.1); /* Soft thin outline */
 }
 
 .resume-section h2 {
@@ -174,13 +170,13 @@ button {
 }
 
 .resume-content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.5s ease-in-out;
+  margin-top: 0.5em;
+  color: #333;
+  line-height: 1.5;
 }
 
-.resume-section.active .resume-content {
-  max-height: 500px;
+.resume ul {
+  padding-left: 1.5em;
 }
 
 /* Centered Download Resume Button */
@@ -205,3 +201,4 @@ button {
 .download-resume a:hover {
   background-color: #ff4786;
 }
+
