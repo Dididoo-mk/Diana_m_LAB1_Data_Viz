@@ -21,36 +21,102 @@ body {
 
 /* Navigation styling */
 nav {
-  display: flex; /* Enable flexbox */
-  justify-content: space-around; /* Space links evenly */
-  align-items: center; /* Center items vertically */
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
   padding: 1em 0;
-  border-bottom: 1px solid var(--border-gray); /* Subtle gray border */
+  border-bottom: 1px solid var(--border-gray);
   margin-bottom: 1em;
-  background-color: #ffffff; /* Improve contrast */
+  background-color: #ffffff;
 }
 
 nav a {
-  flex: 1; /* Each link takes equal space */
-  text-decoration: none; /* Remove underlines */
-  color: inherit; /* Inherit text color */
-  text-align: center; /* Center text */
-  padding: 0.5em; /* Add spacing */
-  transition: all 0.3s ease-in-out; /* Smooth transition */
+  flex: 1;
+  text-decoration: none;
+  color: inherit;
+  text-align: center;
+  padding: 0.5em;
+  transition: all 0.3s ease-in-out;
 }
 
-/* Highlight current page link */
 nav a.current {
-  color: var(--current-page-color); /* Distinct color for current page */
-  border-bottom: 0.4em solid var(--border-gray); /* Thick bottom border */
-  padding-bottom: 0.3em; /* Adjust padding to compensate for border */
-  font-weight: bold; /* Make text bold for emphasis */
+  color: var(--current-page-color);
+  border-bottom: 0.4em solid var(--border-gray);
+  padding-bottom: 0.3em;
+  font-weight: bold;
 }
 
-/* Navigation hover effects */
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   background-color: oklch(from var(--color-accent) 95% 5% h);
+}
+
+/* Contact Page Styling */
+.contact-form {
+  max-width: 40rem;
+  margin: auto;
+  padding: 2em;
+  background-color: #ffffff;
+  border-radius: 0.5em;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form label {
+  display: block;
+  margin-top: 1em;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 0.5em;
+  border: 1px solid var(--border-gray);
+  border-radius: 0.5em;
+  box-sizing: border-box;
+}
+
+.contact-form button {
+  display: block;
+  width: 100%;
+  padding: 1em;
+  margin-top: 1em;
+  background-color: #ff69b4;
+  color: white;
+  border: none;
+  border-radius: 0.5em;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.contact-form button:hover {
+  background-color: #ff4786;
+}
+
+/* Projects Page Styling */
+.projects {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
+  gap: 1.5em;
+  max-width: 60rem;
+  margin: auto;
+  padding: 2em;
+}
+
+.projects article {
+  background-color: #f9f9f9;
+  padding: 1.5em;
+  border-radius: 0.8em;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.projects img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 0.5em;
 }
 
 /* Resume Page Styling */
@@ -61,12 +127,12 @@ nav a:hover {
   background-color: #ffffff;
   border-radius: 0.5em;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: center; /* Ensures all text inside resume is centered */
+  text-align: center;
 }
 
 .resume h1 {
   color: #333;
-  font-size: 1.8em; /* Make Diana Mykhaylychenko smaller */
+  font-size: 1.8em;
   margin-bottom: 0.2em;
 }
 
@@ -80,28 +146,6 @@ nav a:hover {
   margin-top: 0.2em;
 }
 
-/* Centering text and image on home page according to navigation bar */
-.home-content {
-  max-width: 50rem;
-  margin: auto;
-  padding: 1em;
-  text-align: center;
-}
-
-.home-content p {
-  font-size: clamp(1em, 2vw, 1.5em); /* Responsive font size */
-  line-height: 1.5;
-  margin-bottom: 1em;
-}
-
-.home-content img {
-  display: block;
-  margin: auto;
-  max-width: 80%; /* Scales with window */
-  height: auto;
-  border-radius: 0.5em;
-}
-
 /* Styled Resume Sections */
 .resume-section {
   background-color: #f9f9f9;
@@ -109,8 +153,8 @@ nav a:hover {
   border-radius: 0.8em;
   margin-bottom: 1.5em;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1); /* Soft thin outline */
-  text-align: left; /* Ensures section content aligns left */
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  text-align: left;
 }
 
 .resume-section h2 {
@@ -138,7 +182,7 @@ nav a:hover {
 .download-resume a {
   display: inline-block;
   padding: 1em 2em;
-  background-color: #ff69b4; /* Pink button */
+  background-color: #ff69b4;
   color: white;
   border-radius: 0.5em;
   text-decoration: none;
