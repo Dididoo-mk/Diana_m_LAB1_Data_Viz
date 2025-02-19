@@ -14,16 +14,9 @@ html {
   accent-color: var(--color-accent);
 }
 
-/*
-  Prevent content from getting too wide:
-  - max-width: 100ch limits the body’s width to 100 characters.
-  - margin-inline: max(1em, (100% - 100ch) / 2) centers the content and ensures at least a 1em margin on the sides.
-  - padding: 1em adds some extra space so text doesn’t touch the viewport edges on very narrow screens.
-*/
 body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
-  /* Explicit left/right margins using calc() inside max() */
   margin-left: max(1em, calc((100% - 100ch) / 2));
   margin-right: max(1em, calc((100% - 100ch) / 2));
   padding: 1em;
@@ -31,20 +24,18 @@ body {
   color: #333;
 }
 
-/* Ensure all images scale within their container */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Global Heading Styles for a clear hierarchy */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
-  /* Optional: text-wrap: balance; (experimental) */
+  /* Optional: text-wrap: balance; */
 }
 
 h1 {
-  font-size: 4rem; /* Much larger than body text */
+  font-size: 4rem;
   margin: 0.5em 0;
 }
 
@@ -100,27 +91,44 @@ nav a:hover {
   text-align: left;
 }
 
-.contact-form label {
-  display: block;
-  font-weight: bold;
-  margin-top: 1em;
+/* Ensure form controls inherit typography */
+.contact-form input,
+.contact-form textarea,
+.contact-form button {
+  font: inherit;
 }
 
-.contact-form input,
-.contact-form textarea {
+/* Grid layout for the contact form */
+.contact-form form {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1em;
+  align-items: center;
+}
+
+/* Labels span both columns so that the text sits above the input */
+.contact-form form label {
+  grid-column: 1 / -1;
+  font-weight: bold;
+  margin: 0.5rem 0;
+}
+
+/* Inputs and textarea appear in the second column */
+.contact-form form input,
+.contact-form form textarea {
+  grid-column: 2 / -1;
   width: 100%;
   padding: 0.8em;
   border: 1px solid var(--border-gray);
   border-radius: 0.5em;
   box-sizing: border-box;
-  font: inherit;
 }
 
-.contact-form button {
-  display: block;
+/* Submit button spans both columns */
+.contact-form form button {
+  grid-column: 1 / -1;
   width: 100%;
   padding: 1em;
-  margin-top: 1em;
   background-color: #ff69b4;
   color: white;
   border: none;
@@ -131,14 +139,13 @@ nav a:hover {
   transition: background-color 0.3s ease-in-out;
 }
 
-.contact-form button:hover {
+.contact-form form button:hover {
   background-color: #ff4786;
 }
 
 /* ------------------------------------------------------
    5. Projects Page
 ------------------------------------------------------ */
-/* Create a responsive grid layout where columns are at least 15em wide */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -147,7 +154,6 @@ nav a:hover {
   margin: auto;
 }
 
-/* Use subgrid for horizontal alignment (works in Firefox) */
 .projects article {
   display: grid;
   grid-template-rows: subgrid;
@@ -256,22 +262,24 @@ nav a:hover {
   background-color: #ff4786;
 }
 
-/* Home page header styling */
+/* ------------------------------------------------------
+   8. Home Page Header Styling
+------------------------------------------------------ */
 .home-header {
   width: 100%;
-  max-width: 100ch;       /* Limit content width to 100 characters */
-  margin: 0 auto 2em auto; /* Center the container and add bottom margin */
-  text-align: center;     /* Center the text and inline elements */
+  max-width: 100ch;
+  margin: 0 auto 2em auto;
+  text-align: center;
 }
 
 .home-header p {
-  font-size: 1.25rem;     /* Adjust text size as needed */
+  font-size: 1.25rem;
   margin-bottom: 1em;
 }
 
 .home-header img {
-  width: 100%;            /* Make the image fill the container width */
+  width: 100%;
   height: auto;
-  display: block;         /* Removes extra inline spacing */
+  display: block;
   margin: 0 auto;
 }
