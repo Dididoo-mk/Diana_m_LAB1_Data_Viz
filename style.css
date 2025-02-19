@@ -31,7 +31,6 @@ img {
 
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
-  /* Optional: text-wrap: balance; */
 }
 
 h1 {
@@ -87,8 +86,7 @@ nav a:hover {
   padding: 2em;
   background-color: #ffffff;
   border-radius: 0.5em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  text-align: left;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
 /* Ensure form controls inherit typography */
@@ -99,10 +97,11 @@ nav a:hover {
 }
 
 /* --- Contact Form Grid Layout --- */
-/* Make the form a two-column grid:
-   - First column: labels (auto width)
-   - Second column: inputs (take up remaining space)
-   Use a gap of 1em for spacing. */
+/* Set up a grid with two columns: 
+   - First column (auto): for labels
+   - Second column (1fr): for inputs
+   A gap of 1em separates rows and columns.
+*/
 .contact-form form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -110,13 +109,14 @@ nav a:hover {
   align-items: center;
 }
 
-/* Place each label in the first column, right-aligned */
+/* Labels: right-aligned in first column */
 .contact-form form label {
   text-align: right;
   padding-right: 0.5em;
+  font-weight: bold;
 }
 
-/* Place each input/textarea in the second column */
+/* Inputs and textarea: full width in second column */
 .contact-form form input,
 .contact-form form textarea {
   width: 100%;
@@ -128,7 +128,8 @@ nav a:hover {
 
 /* Fixed heights for consistency:
    - Email and Subject inputs: 2.5rem height
-   - Message textarea: 5rem height (double) */
+   - Message textarea: 5rem height (double)
+*/
 .contact-form form input[type="email"],
 .contact-form form input[type="text"] {
   height: 2.5rem;
@@ -138,7 +139,7 @@ nav a:hover {
   height: 5rem;
 }
 
-/* The submit button should span both columns */
+/* The Send button spans both columns */
 .contact-form form button {
   grid-column: 1 / -1;
   width: 100%;
@@ -174,8 +175,8 @@ nav a:hover {
   grid-row: span 3;
   background-color: #ffffff;
   border-radius: 0.8em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+  border: 1px solid rgba(0,0,0,0.1);
   text-align: center;
   padding: 1.5em;
   transition: transform 0.3s ease-in-out;
@@ -206,7 +207,7 @@ nav a:hover {
   padding: 2em;
   background-color: #ffffff;
   border-radius: 0.5em;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
   text-align: center;
 }
 
@@ -231,8 +232,8 @@ nav a:hover {
   padding: 1.5em;
   border-radius: 0.8em;
   margin-bottom: 1.5em;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.1);
   text-align: left;
 }
 
