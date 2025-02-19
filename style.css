@@ -52,6 +52,7 @@ nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   background-color: oklch(from var(--color-accent) 95% 5% h);
 }
+
 /* Resume Page Styling */
 .resume {
   max-width: 50rem;
@@ -79,15 +80,16 @@ nav a:hover {
   margin-top: 0.2em;
 }
 
-/* Centering text and image on home page */
+/* Centering text and image on home page according to navigation bar */
 .home-content {
-  text-align: center;
   max-width: 50rem;
   margin: auto;
+  padding: 1em;
+  text-align: center;
 }
 
 .home-content p {
-  font-size: 1.2em;
+  font-size: clamp(1em, 2vw, 1.5em); /* Responsive font size */
   line-height: 1.5;
   margin-bottom: 1em;
 }
@@ -95,7 +97,8 @@ nav a:hover {
 .home-content img {
   display: block;
   margin: auto;
-  max-width: 100%;
+  max-width: 80%; /* Scales with window */
+  height: auto;
   border-radius: 0.5em;
 }
 
