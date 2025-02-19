@@ -154,6 +154,12 @@ button {
   font-size: 1.8em; /* Make Diana Mykhaylychenko smaller */
 }
 
+.resume p.intro {
+  text-align: center;
+  font-weight: bold;
+  margin-top: 0.5em;
+}
+
 /* Styled Resume Sections */
 .resume-section {
   background-color: #f9f9f9;
@@ -201,4 +207,3 @@ button {
 .download-resume a:hover {
   background-color: #ff4786;
 }
-
