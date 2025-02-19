@@ -23,7 +23,9 @@ html {
 body {
   font: 100%/1.5 system-ui;
   max-width: 100ch;
-  margin-inline: max(1em, (100% - 100ch) / 2);
+  /* Explicit left/right margins using calc() inside max() */
+  margin-left: max(1em, calc((100% - 100ch) / 2));
+  margin-right: max(1em, calc((100% - 100ch) / 2));
   padding: 1em;
   background-color: #f9f9f9;
   color: #333;
