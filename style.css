@@ -1,46 +1,46 @@
-/* ------------------------------------------------------
+/* ----------------------------------------------
    1. Global Color Variables
------------------------------------------------------- */
+---------------------------------------------- */
 :root {
   --color-accent: oklch(65% 50% 0);
   --border-gray: oklch(80% 3% 200);
   --current-page-color: oklch(70% 20% 50);
 }
 
-/* ------------------------------------------------------
+/* ----------------------------------------------
    2. Base and Global Styles
------------------------------------------------------- */
+---------------------------------------------- */
 html {
   accent-color: var(--color-accent);
 }
 
 /* 
-   Remove or significantly increase body max-width 
-   to allow the .projects section to reach full width 
-   and fit three columns comfortably.
+   Remove any narrow max-width to allow enough space 
+   for 3+ columns when the browser is wide enough.
 */
 body {
   font: 100%/1.5 system-ui;
-  margin-inline: auto;
+  margin: 0 auto;
   padding: 1em;
   background-color: #f9f9f9;
   color: #333;
-  /* Option A: Remove max-width completely */
-  /* max-width: none; */
-
-  /* Option B: Increase max-width so three columns definitely fit */
-  max-width: 80rem; /* ~1280px wide, enough for 3+ columns */
 }
 
-/* Distinguish headings more */
+/* Apply to ALL images so they never exceed their container */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Distinct heading hierarchy */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
-  /* text-wrap: balance;  (Experimental) */
+  /* text-wrap: balance; (Experimental, may help with line breaks) */
 }
 
+/* Significantly larger h1 (e.g., ~400% of default text) */
 h1 {
-  /* Significantly larger for visual contrast */
-  font-size: 3rem;
+  font-size: 4rem; /* Adjust as desired */
   margin: 0.5em 0;
 }
 
@@ -49,9 +49,9 @@ h2 {
   margin: 0.5em 0;
 }
 
-/* ------------------------------------------------------
+/* ----------------------------------------------
    3. Navigation
------------------------------------------------------- */
+---------------------------------------------- */
 nav {
   display: flex;
   justify-content: space-around;
@@ -83,9 +83,9 @@ nav a:hover {
   background-color: oklch(from var(--color-accent) 95% 5% h);
 }
 
-/* ------------------------------------------------------
+/* ----------------------------------------------
    4. Contact Page
------------------------------------------------------- */
+---------------------------------------------- */
 .contact-form {
   max-width: 40rem;
   margin: auto;
@@ -131,50 +131,34 @@ nav a:hover {
   background-color: #ff4786;
 }
 
-/* ------------------------------------------------------
+/* ----------------------------------------------
    5. Projects Page
------------------------------------------------------- */
-
+---------------------------------------------- */
 /* 
-   We'll use a fixed 3-column grid on large screens, 
-   2 columns on medium, and 1 on small devices.
-   That way, we guarantee 3 columns if the viewport is wide enough.
+   A flexible grid that adapts to viewport width:
+   - As many columns as fit, each at least 15em wide.
+   - If the container is wide enough, you can get 3, 4, or more columns.
 */
 .projects {
   display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1.5em;
-  margin: auto;
   padding: 2em;
-  /* We can limit the section width or let it grow to parent's width */
-  max-width: 70rem;
+
+  /* If you have another parent container limiting width, 
+     remove or increase it to ensure you can fit 3+ columns. */
+  margin: auto;
 }
 
-/* Desktop/Large screens (≥ 960px) -> 3 columns */
-@media (min-width: 60rem) {
-  .projects {
-    grid-template-columns: repeat(3, 1fr);
-  }
-}
-
-/* Medium screens (≥ 30rem ~ 480px) -> 2 columns */
-@media (min-width: 30rem) and (max-width: 60rem) {
-  .projects {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-/* Small screens (< 30rem) -> 1 column */
-@media (max-width: 30rem) {
-  .projects {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Each project item (article) is a card */
+/* Subgrid approach for row alignment (works only in Firefox) */
 .projects article {
   display: grid;
-  grid-template-rows: auto auto auto;
-  gap: 0.75em;
+  /* Subgrid for row alignment across columns */
+  grid-template-rows: subgrid;
+  /* Each article spans 3 rows in the parent's grid. 
+     Only has effect in Firefox. */
+  grid-row: span 3;
+
   background-color: #ffffff;
   border-radius: 0.8em;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -184,34 +168,32 @@ nav a:hover {
   transition: transform 0.3s ease-in-out;
 }
 
+/* Hover effect */
 .projects article:hover {
   transform: scale(1.03);
 }
 
-/* Adjust heading margin inside articles */
+/* Remove extra spacing on h2 inside articles */
 .projects h2 {
   margin: 0;
   margin-bottom: 0.5em;
-  font-size: 1.2rem;
 }
 
-/* Ensure images are responsive and never exceed card width */
-.projects img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 0.5em;
-}
+/* 
+   Images are already restricted globally with 
+   img { max-width: 100%; height: auto; } 
+*/
 
-/* Paragraph spacing */
+/* Tweak paragraph spacing */
 .projects p {
   margin: 0;
-  font-size: 1em;
   line-height: 1.4;
+  font-size: 1em;
 }
 
-/* ------------------------------------------------------
+/* ----------------------------------------------
    6. Resume Page
------------------------------------------------------- */
+---------------------------------------------- */
 .resume {
   max-width: 50rem;
   margin: auto;
@@ -264,9 +246,9 @@ nav a:hover {
   padding-left: 1.5em;
 }
 
-/* ------------------------------------------------------
+/* ----------------------------------------------
    7. Download Resume Button
------------------------------------------------------- */
+---------------------------------------------- */
 .download-resume {
   text-align: center;
   margin-top: 2em;
