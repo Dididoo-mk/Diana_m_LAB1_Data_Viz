@@ -19,6 +19,18 @@ body {
   color: #333;
 }
 
+/* Global heading styles for clear hierarchy */
+h1, h2, h3, h4, h5, h6 {
+  line-height: 1.1;
+  /* The experimental property text-wrap: balance may improve line breaks */
+  text-wrap: balance;
+}
+
+/* Make <h1> significantly larger (e.g. 400% of body text) */
+h1 {
+  font-size: 4em;
+}
+
 /* Navigation styling */
 nav {
   display: flex;
@@ -98,9 +110,10 @@ nav a:hover {
 }
 
 /* Projects Page Styling */
+/* Step 4.2: Apply a responsive grid */
 .projects {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1.5em;
   max-width: 70rem;
   margin: auto;
@@ -108,9 +121,14 @@ nav a:hover {
   justify-content: center;
 }
 
+/* Step 4.3: Horizontal alignment with subgrid */
+/* Each article becomes a grid container using subgrid for rows */
 .projects article {
-  background-color: #ffffff;
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 3; /* each article spans 3 rows for alignment */
   padding: 1.5em;
+  background-color: #ffffff;
   border-radius: 0.8em;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -122,15 +140,18 @@ nav a:hover {
   transform: scale(1.03);
 }
 
+/* Ensure headings in each article don’t add extra spacing */
+.projects h2 {
+  margin: 0; /* reset default margin */
+  font-size: 1.2em;
+  margin-bottom: 0.5em;
+}
+
+/* Step 4.2: Prevent images from getting too wide */
 .projects img {
   max-width: 100%;
   height: auto;
   border-radius: 0.5em;
-}
-
-.projects h2 {
-  font-size: 1.2em;
-  margin-bottom: 0.5em;
 }
 
 .projects p {
