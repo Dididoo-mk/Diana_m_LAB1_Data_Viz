@@ -258,9 +258,10 @@ nav a:hover {
 
 /* Home page header styling */
 .home-header {
-  max-width: 100ch;       /* Matches the max-width of the body */
+  width: 100%;
+  max-width: 100ch;       /* Limit content width to 100 characters */
   margin: 0 auto 2em auto; /* Center the container and add bottom margin */
-  text-align: center;     /* Center the text inside */
+  text-align: center;     /* Center the text and inline elements */
 }
 
 .home-header p {
@@ -271,6 +272,6 @@ nav a:hover {
 .home-header img {
   width: 100%;            /* Make the image fill the container width */
   height: auto;
-  display: block;         /* Remove any extra inline spacing */
+  display: block;         /* Removes extra inline spacing */
   margin: 0 auto;
 }
