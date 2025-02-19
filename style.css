@@ -99,7 +99,10 @@ nav a:hover {
 }
 
 /* --- Contact Form Grid Layout --- */
-/* Set up a two-column grid for the form */
+/* Make the form a two-column grid:
+   - First column: labels (auto width)
+   - Second column: inputs (take up remaining space)
+   Use a gap of 1em for spacing. */
 .contact-form form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -107,13 +110,13 @@ nav a:hover {
   align-items: center;
 }
 
-/* Labels: placed in the first column and right-aligned */
+/* Place each label in the first column, right-aligned */
 .contact-form form label {
   text-align: right;
   padding-right: 0.5em;
 }
 
-/* Inputs and textarea: placed in the second column */
+/* Place each input/textarea in the second column */
 .contact-form form input,
 .contact-form form textarea {
   width: 100%;
@@ -135,7 +138,7 @@ nav a:hover {
   height: 5rem;
 }
 
-/* The submit button spans both columns */
+/* The submit button should span both columns */
 .contact-form form button {
   grid-column: 1 / -1;
   width: 100%;
