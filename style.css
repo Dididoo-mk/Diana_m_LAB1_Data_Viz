@@ -9,7 +9,7 @@ html {
   accent-color: var(--color-accent);
 }
 
-/* Set line height and prevent content from getting too wide */
+/* Global Styles */
 body {
   font: 100%/1.5 system-ui;
   max-width: 50rem;
@@ -19,16 +19,16 @@ body {
   color: #333;
 }
 
-/* Global heading styles for clear hierarchy */
+/* Global Heading Styles */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
-  /* The experimental property text-wrap: balance may improve line breaks */
-  text-wrap: balance;
+  /* text-wrap: balance;  Optional & experimental */
 }
-
-/* Make <h1> significantly larger (e.g. 400% of body text) */
 h1 {
-  font-size: 4em;
+  font-size: 3rem; /* Significantly larger than other headings */
+}
+h2 {
+  font-size: 1.5rem;
 }
 
 /* Navigation styling */
@@ -41,7 +41,6 @@ nav {
   margin-bottom: 1em;
   background-color: #ffffff;
 }
-
 nav a {
   flex: 1;
   text-decoration: none;
@@ -50,14 +49,12 @@ nav a {
   padding: 0.5em;
   transition: all 0.3s ease-in-out;
 }
-
 nav a.current {
   color: var(--current-page-color);
   border-bottom: 0.4em solid var(--border-gray);
   padding-bottom: 0.3em;
   font-weight: bold;
 }
-
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   background-color: oklch(from var(--color-accent) 95% 5% h);
@@ -73,13 +70,11 @@ nav a:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: left;
 }
-
 .contact-form label {
   display: block;
   font-weight: bold;
   margin-top: 1em;
 }
-
 .contact-form input,
 .contact-form textarea {
   width: 100%;
@@ -89,7 +84,6 @@ nav a:hover {
   box-sizing: border-box;
   font: inherit;
 }
-
 .contact-form button {
   display: block;
   width: 100%;
@@ -104,13 +98,11 @@ nav a:hover {
   font-size: 1.1em;
   transition: background-color 0.3s ease-in-out;
 }
-
 .contact-form button:hover {
   background-color: #ff4786;
 }
 
 /* Projects Page Styling */
-/* Step 4.2: Apply a responsive grid */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -118,15 +110,17 @@ nav a:hover {
   max-width: 70rem;
   margin: auto;
   padding: 2em;
-  justify-content: center;
+  justify-items: stretch;
 }
 
-/* Step 4.3: Horizontal alignment with subgrid */
-/* Each article becomes a grid container using subgrid for rows */
+/* Each project article is structured into three rows:
+   1. The heading
+   2. The image
+   3. The paragraph text */
 .projects article {
   display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3; /* each article spans 3 rows for alignment */
+  grid-template-rows: auto auto auto;
+  gap: 0.5em;
   padding: 1.5em;
   background-color: #ffffff;
   border-radius: 0.8em;
@@ -135,25 +129,25 @@ nav a:hover {
   text-align: center;
   transition: transform 0.3s ease-in-out;
 }
-
 .projects article:hover {
   transform: scale(1.03);
 }
 
-/* Ensure headings in each article don’t add extra spacing */
+/* Ensure headings in projects are neatly aligned */
 .projects h2 {
-  margin: 0; /* reset default margin */
+  margin: 0;       /* Remove default margin for consistency */
   font-size: 1.2em;
   margin-bottom: 0.5em;
 }
 
-/* Step 4.2: Prevent images from getting too wide */
+/* Prevent images from becoming too wide */
 .projects img {
   max-width: 100%;
   height: auto;
   border-radius: 0.5em;
 }
 
+/* Text styling for project descriptions */
 .projects p {
   font-size: 1em;
   line-height: 1.4;
@@ -169,13 +163,11 @@ nav a:hover {
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
-
 .resume h1 {
   color: #333;
   font-size: 1.8em;
   margin-bottom: 0.2em;
 }
-
 .resume .intro {
   display: flex;
   justify-content: center;
@@ -196,18 +188,15 @@ nav a:hover {
   border: 1px solid rgba(0, 0, 0, 0.1);
   text-align: left;
 }
-
 .resume-section h2 {
   margin: 0;
   color: var(--color-accent);
 }
-
 .resume-content {
   margin-top: 0.5em;
   color: #333;
   line-height: 1.5;
 }
-
 .resume ul {
   padding-left: 1.5em;
 }
@@ -218,7 +207,6 @@ nav a:hover {
   margin-top: 2em;
   padding: 2em 0;
 }
-
 .download-resume a {
   display: inline-block;
   padding: 1em 2em;
@@ -230,7 +218,6 @@ nav a:hover {
   font-size: 1.1em;
   transition: background-color 0.3s ease-in-out;
 }
-
 .download-resume a:hover {
   background-color: #ff4786;
 }
