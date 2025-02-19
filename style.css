@@ -14,21 +14,28 @@ html {
   accent-color: var(--color-accent);
 }
 
+/* 
+   Remove or significantly increase body max-width 
+   to allow the .projects section to reach full width 
+   and fit three columns comfortably.
+*/
 body {
   font: 100%/1.5 system-ui;
-  /* Limits overall width to ~800px; 
-     for more columns, remove or increase this limit. */
-  max-width: 50rem; 
   margin-inline: auto;
   padding: 1em;
   background-color: #f9f9f9;
   color: #333;
+  /* Option A: Remove max-width completely */
+  /* max-width: none; */
+
+  /* Option B: Increase max-width so three columns definitely fit */
+  max-width: 80rem; /* ~1280px wide, enough for 3+ columns */
 }
 
-/* Make headings more distinct */
+/* Distinguish headings more */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
-  /* text-wrap: balance;  (Experimental, may help with line breaks) */
+  /* text-wrap: balance;  (Experimental) */
 }
 
 h1 {
@@ -127,28 +134,47 @@ nav a:hover {
 /* ------------------------------------------------------
    5. Projects Page
 ------------------------------------------------------ */
-/* Container uses auto-fill + minmax for responsive columns */
+
+/* 
+   We'll use a fixed 3-column grid on large screens, 
+   2 columns on medium, and 1 on small devices.
+   That way, we guarantee 3 columns if the viewport is wide enough.
+*/
 .projects {
   display: grid;
-  /* For as many columns as fit, each at least 15em wide */
-  grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1.5em;
-  /* Increase or remove to allow more space for columns */
-  max-width: 70rem;
   margin: auto;
   padding: 2em;
+  /* We can limit the section width or let it grow to parent's width */
+  max-width: 70rem;
+}
+
+/* Desktop/Large screens (≥ 960px) -> 3 columns */
+@media (min-width: 60rem) {
+  .projects {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Medium screens (≥ 30rem ~ 480px) -> 2 columns */
+@media (min-width: 30rem) and (max-width: 60rem) {
+  .projects {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Small screens (< 30rem) -> 1 column */
+@media (max-width: 30rem) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* Each project item (article) is a card */
 .projects article {
-  /* If we wanted subgrid-based alignment across columns,
-     we'd do grid-template-rows: subgrid and grid-row: span 3.
-     But subgrid only works in Firefox for now.
-     We'll do a simple 3-row layout for consistent spacing: */
   display: grid;
-  grid-template-rows: auto auto auto; 
+  grid-template-rows: auto auto auto;
   gap: 0.75em;
-
   background-color: #ffffff;
   border-radius: 0.8em;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
