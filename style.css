@@ -1,3 +1,57 @@
+/* Define global color variables */
+:root {
+  --color-accent: oklch(65% 50% 0);
+  --border-gray: oklch(80% 3% 200);
+  --current-page-color: oklch(70% 20% 50); /* Adjusted for distinct highlight */
+}
+
+html {
+  accent-color: var(--color-accent);
+}
+
+/* Set line height and prevent content from getting too wide */
+body {
+  font: 100%/1.5 system-ui;
+  max-width: 50rem;
+  margin-inline: auto;
+  padding: 1em;
+  background-color: #f9f9f9;
+  color: #333;
+}
+
+/* Navigation styling */
+nav {
+  display: flex; /* Enable flexbox */
+  justify-content: space-around; /* Space links evenly */
+  align-items: center; /* Center items vertically */
+  padding: 1em 0;
+  border-bottom: 1px solid var(--border-gray); /* Subtle gray border */
+  margin-bottom: 1em;
+  background-color: #ffffff; /* Improve contrast */
+}
+
+nav a {
+  flex: 1; /* Each link takes equal space */
+  text-decoration: none; /* Remove underlines */
+  color: inherit; /* Inherit text color */
+  text-align: center; /* Center text */
+  padding: 0.5em; /* Add spacing */
+  transition: all 0.3s ease-in-out; /* Smooth transition */
+}
+
+/* Highlight current page link */
+nav a.current {
+  color: var(--current-page-color); /* Distinct color for current page */
+  border-bottom: 0.4em solid var(--border-gray); /* Thick bottom border */
+  padding-bottom: 0.3em; /* Adjust padding to compensate for border */
+  font-weight: bold; /* Make text bold for emphasis */
+}
+
+/* Navigation hover effects */
+nav a:hover {
+  border-bottom: 0.4em solid var(--color-accent);
+  background-color: oklch(from var(--color-accent) 95% 5% h);
+}
 /* Resume Page Styling */
 .resume {
   max-width: 50rem;
@@ -23,6 +77,26 @@
   font-weight: bold;
   font-size: 1.1em;
   margin-top: 0.2em;
+}
+
+/* Centering text and image on home page */
+.home-content {
+  text-align: center;
+  max-width: 50rem;
+  margin: auto;
+}
+
+.home-content p {
+  font-size: 1.2em;
+  line-height: 1.5;
+  margin-bottom: 1em;
+}
+
+.home-content img {
+  display: block;
+  margin: auto;
+  max-width: 100%;
+  border-radius: 0.5em;
 }
 
 /* Styled Resume Sections */
