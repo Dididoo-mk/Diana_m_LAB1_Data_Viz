@@ -255,3 +255,22 @@ nav a:hover {
 .download-resume a:hover {
   background-color: #ff4786;
 }
+
+/* Home page header styling */
+.home-header {
+  max-width: 100ch;       /* Same max-width as the rest of your content */
+  margin: 0 auto 2em auto; /* Center the container and add bottom margin */
+  text-align: center;     /* Center the text inside */
+}
+
+.home-header p {
+  font-size: 1.25rem;     /* Adjust text size as needed */
+  margin-bottom: 1em;
+}
+
+.home-header img {
+  width: 100%;  /* Makes the image fill the container (i.e. same width as navigation) */
+  height: auto;
+  display: block;  /* Removes any inline spacing issues */
+  margin: 0 auto;
+}
