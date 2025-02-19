@@ -164,7 +164,7 @@ button {
   transition: background-color 0.3s ease-in-out;
 }
 
-.resume-section:hover {
+.resume-section.active {
   background-color: #e0e0e0;
 }
 
@@ -179,7 +179,7 @@ button {
   transition: max-height 0.5s ease-in-out;
 }
 
-.resume-section:hover .resume-content {
+.resume-section.active .resume-content {
   max-height: 500px;
 }
 
