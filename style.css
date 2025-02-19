@@ -1,26 +1,28 @@
-/* ----------------------------------------------
+/* ------------------------------------------------------
    1. Global Color Variables
----------------------------------------------- */
+------------------------------------------------------ */
 :root {
   --color-accent: oklch(65% 50% 0);
   --border-gray: oklch(80% 3% 200);
   --current-page-color: oklch(70% 20% 50);
 }
 
-/* ----------------------------------------------
+/* ------------------------------------------------------
    2. Base and Global Styles
----------------------------------------------- */
+------------------------------------------------------ */
 html {
   accent-color: var(--color-accent);
 }
 
 /* 
-   Remove any narrow max-width to allow enough space 
-   for 3+ columns when the browser is wide enough.
+   Prevent content from getting too wide:
+   - max-width: 100ch ensures content never exceeds 100 characters in width.
+   - margin-inline: max(1em, (100% - 100ch) / 2) centers the content and ensures at least a 1em margin on smaller screens.
 */
 body {
   font: 100%/1.5 system-ui;
-  margin: 0 auto;
+  max-width: 100ch;
+  margin-inline: max(1em, (100% - 100ch) / 2);
   padding: 1em;
   background-color: #f9f9f9;
   color: #333;
@@ -40,7 +42,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Significantly larger h1 (e.g., ~400% of default text) */
 h1 {
-  font-size: 4rem; /* Adjust as desired */
+  font-size: 4rem;
   margin: 0.5em 0;
 }
 
@@ -49,9 +51,9 @@ h2 {
   margin: 0.5em 0;
 }
 
-/* ----------------------------------------------
+/* ------------------------------------------------------
    3. Navigation
----------------------------------------------- */
+------------------------------------------------------ */
 nav {
   display: flex;
   justify-content: space-around;
@@ -83,9 +85,9 @@ nav a:hover {
   background-color: oklch(from var(--color-accent) 95% 5% h);
 }
 
-/* ----------------------------------------------
+/* ------------------------------------------------------
    4. Contact Page
----------------------------------------------- */
+------------------------------------------------------ */
 .contact-form {
   max-width: 40rem;
   margin: auto;
@@ -131,34 +133,27 @@ nav a:hover {
   background-color: #ff4786;
 }
 
-/* ----------------------------------------------
+/* ------------------------------------------------------
    5. Projects Page
----------------------------------------------- */
+------------------------------------------------------ */
 /* 
-   A flexible grid that adapts to viewport width:
-   - As many columns as fit, each at least 15em wide.
-   - If the container is wide enough, you can get 3, 4, or more columns.
+   Use a responsive grid that adapts to the viewport:
+   - repeat(auto-fill, minmax(15em, 1fr)) creates as many columns as can fit,
+     each at least 15em wide.
 */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1.5em;
   padding: 2em;
-
-  /* If you have another parent container limiting width, 
-     remove or increase it to ensure you can fit 3+ columns. */
   margin: auto;
 }
 
-/* Subgrid approach for row alignment (works only in Firefox) */
+/* Subgrid approach for row alignment (only works in Firefox) */
 .projects article {
   display: grid;
-  /* Subgrid for row alignment across columns */
   grid-template-rows: subgrid;
-  /* Each article spans 3 rows in the parent's grid. 
-     Only has effect in Firefox. */
   grid-row: span 3;
-
   background-color: #ffffff;
   border-radius: 0.8em;
   box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
@@ -168,7 +163,6 @@ nav a:hover {
   transition: transform 0.3s ease-in-out;
 }
 
-/* Hover effect */
 .projects article:hover {
   transform: scale(1.03);
 }
@@ -177,12 +171,8 @@ nav a:hover {
 .projects h2 {
   margin: 0;
   margin-bottom: 0.5em;
+  font-size: 1.2rem;
 }
-
-/* 
-   Images are already restricted globally with 
-   img { max-width: 100%; height: auto; } 
-*/
 
 /* Tweak paragraph spacing */
 .projects p {
@@ -191,9 +181,9 @@ nav a:hover {
   font-size: 1em;
 }
 
-/* ----------------------------------------------
+/* ------------------------------------------------------
    6. Resume Page
----------------------------------------------- */
+------------------------------------------------------ */
 .resume {
   max-width: 50rem;
   margin: auto;
@@ -246,9 +236,9 @@ nav a:hover {
   padding-left: 1.5em;
 }
 
-/* ----------------------------------------------
+/* ------------------------------------------------------
    7. Download Resume Button
----------------------------------------------- */
+------------------------------------------------------ */
 .download-resume {
   text-align: center;
   margin-top: 2em;
