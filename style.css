@@ -14,10 +14,11 @@ html {
   accent-color: var(--color-accent);
 }
 
-/* 
-   Prevent content from getting too wide:
-   - max-width: 100ch ensures content never exceeds 100 characters in width.
-   - margin-inline: max(1em, (100% - 100ch) / 2) centers the content and ensures at least a 1em margin on smaller screens.
+/*
+  Prevent content from getting too wide:
+  - max-width: 100ch limits the body’s width to 100 characters.
+  - margin-inline: max(1em, (100% - 100ch) / 2) centers the content and ensures at least a 1em margin on the sides.
+  - padding: 1em adds some extra space so text doesn’t touch the viewport edges on very narrow screens.
 */
 body {
   font: 100%/1.5 system-ui;
@@ -28,21 +29,20 @@ body {
   color: #333;
 }
 
-/* Apply to ALL images so they never exceed their container */
+/* Ensure all images scale within their container */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Distinct heading hierarchy */
+/* Global Heading Styles for a clear hierarchy */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
-  /* text-wrap: balance; (Experimental, may help with line breaks) */
+  /* Optional: text-wrap: balance; (experimental) */
 }
 
-/* Significantly larger h1 (e.g., ~400% of default text) */
 h1 {
-  font-size: 4rem;
+  font-size: 4rem; /* Much larger than body text */
   margin: 0.5em 0;
 }
 
@@ -94,7 +94,7 @@ nav a:hover {
   padding: 2em;
   background-color: #ffffff;
   border-radius: 0.5em;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: left;
 }
 
@@ -136,11 +136,7 @@ nav a:hover {
 /* ------------------------------------------------------
    5. Projects Page
 ------------------------------------------------------ */
-/* 
-   Use a responsive grid that adapts to the viewport:
-   - repeat(auto-fill, minmax(15em, 1fr)) creates as many columns as can fit,
-     each at least 15em wide.
-*/
+/* Create a responsive grid layout where columns are at least 15em wide */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -149,14 +145,14 @@ nav a:hover {
   margin: auto;
 }
 
-/* Subgrid approach for row alignment (only works in Firefox) */
+/* Use subgrid for horizontal alignment (works in Firefox) */
 .projects article {
   display: grid;
   grid-template-rows: subgrid;
   grid-row: span 3;
   background-color: #ffffff;
   border-radius: 0.8em;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   border: 1px solid rgba(0, 0, 0, 0.1);
   text-align: center;
   padding: 1.5em;
@@ -167,14 +163,12 @@ nav a:hover {
   transform: scale(1.03);
 }
 
-/* Remove extra spacing on h2 inside articles */
 .projects h2 {
   margin: 0;
   margin-bottom: 0.5em;
   font-size: 1.2rem;
 }
 
-/* Tweak paragraph spacing */
 .projects p {
   margin: 0;
   line-height: 1.4;
@@ -190,7 +184,7 @@ nav a:hover {
   padding: 2em;
   background-color: #ffffff;
   border-radius: 0.5em;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
   text-align: center;
 }
 
@@ -210,13 +204,12 @@ nav a:hover {
   margin-top: 0.2em;
 }
 
-/* Styled Resume Sections */
 .resume-section {
   background-color: #f9f9f9;
   padding: 1.5em;
   border-radius: 0.8em;
   margin-bottom: 1.5em;
-  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   border: 1px solid rgba(0, 0, 0, 0.1);
   text-align: left;
 }
