@@ -320,12 +320,21 @@ html.dark-mode nav a.current {
 }
 
 html.dark-mode .contact-form,
-html.dark-mode .resume,
 html.dark-mode .projects article,
 html.dark-mode .resume-section {
   background-color: #1e1e1e;
   color: #f9f9f9;
   border-color: rgba(255, 255, 255, 0.2);
+}
+
+/* Ensure the text on the resume page becomes white in dark mode, except for the accent (pink) headings */
+html.dark-mode .resume h1,
+html.dark-mode .resume .intro,
+html.dark-mode .resume-content,
+html.dark-mode .resume p,
+html.dark-mode .resume ul,
+html.dark-mode .resume li {
+  color: #f9f9f9 !important;
 }
 
 html.light-mode body {
