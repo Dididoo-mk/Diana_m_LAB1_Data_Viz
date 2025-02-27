@@ -39,13 +39,25 @@ document.body.insertAdjacentHTML("afterbegin", `
 `);
 
 let colorSchemeSelect = document.querySelector("#colorSchemeSelect");
+function setColorScheme(scheme) {
+  document.documentElement.style.setProperty("color-scheme", scheme);
+  document.documentElement.classList.remove("dark-mode", "light-mode");
+  if (scheme === "dark") {
+    document.documentElement.classList.add("dark-mode");
+  } else if (scheme === "light") {
+    document.documentElement.classList.add("light-mode");
+  }
+}
 if (localStorage.colorScheme) {
-  document.documentElement.style.setProperty("color-scheme", localStorage.colorScheme);
+  setColorScheme(localStorage.colorScheme);
   colorSchemeSelect.value = localStorage.colorScheme;
+} else {
+  setColorScheme("light dark");
+  colorSchemeSelect.value = "light dark";
 }
 colorSchemeSelect.addEventListener("input", function(event) {
   let newScheme = event.target.value;
-  document.documentElement.style.setProperty("color-scheme", newScheme);
+  setColorScheme(newScheme);
   localStorage.colorScheme = newScheme;
   console.log("color scheme changed to", newScheme);
 });
