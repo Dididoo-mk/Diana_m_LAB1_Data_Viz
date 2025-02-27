@@ -199,10 +199,15 @@ nav a:hover {
   text-align: center;
 }
 
+/* Force the name and candidate description to be pink */
 .resume h1 {
-  color: #333;
+  color: #ff69b4;
   font-size: 1.8em;
   margin-bottom: 0.2em;
+}
+
+.resume p strong {
+  color: #ff69b4;
 }
 
 .resume .intro {
@@ -327,14 +332,10 @@ html.dark-mode .resume-section {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Ensure the text on the resume page becomes white in dark mode, except for the accent (pink) headings */
+/* Ensure resume text remains pink in dark mode */
 html.dark-mode .resume h1,
-html.dark-mode .resume .intro,
-html.dark-mode .resume-content,
-html.dark-mode .resume p,
-html.dark-mode .resume ul,
-html.dark-mode .resume li {
-  color: #f9f9f9 !important;
+html.dark-mode .resume p strong {
+  color: #ff69b4 !important;
 }
 
 html.light-mode body {
