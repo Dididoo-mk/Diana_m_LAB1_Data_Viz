@@ -12,6 +12,7 @@
 ------------------------------------------------------ */
 html {
   accent-color: var(--color-accent);
+  color-scheme: light dark; /* Added for automatic dark mode support */
 }
 
 body {
@@ -43,15 +44,16 @@ h2 {
   margin: 0.5em 0;
 }
 
-/* 3. Navigation*/
+/* 3. Navigation */
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 1em 0;
-  border-bottom: 1px solid var(--border-gray);
+  border-bottom: 1px solid var(--border-color);
   margin-bottom: 1em;
   background-color: #ffffff;
+  --border-color: oklch(50% 10% 200 / 40%); /* New variable for border color */
 }
 
 nav a {
@@ -65,17 +67,17 @@ nav a {
 
 nav a.current {
   color: var(--current-page-color);
-  border-bottom: 0.4em solid var(--border-gray);
+  border-bottom: 0.4em solid var(--border-color);
   padding-bottom: 0.3em;
   font-weight: bold;
 }
 
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
-  background-color: oklch(from var(--color-accent) 95% 5% h);
+  background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
-/* 4. Contact Page*/
+/* 4. Contact Page */
 .contact-form {
   max-width: 40rem;
   margin: auto;
@@ -93,11 +95,6 @@ nav a:hover {
 }
 
 /* --- Contact Form Grid Layout --- */
-/* Set up a grid with two columns: 
-   - First column (auto): for labels
-   - Second column (1fr): for inputs
-   A gap of 1em separates rows and columns.
-*/
 .contact-form form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -105,14 +102,12 @@ nav a:hover {
   align-items: center;
 }
 
-/* Labels: right-aligned in first column */
 .contact-form form label {
   text-align: right;
   padding-right: 0.5em;
   font-weight: bold;
 }
 
-/* Inputs and textarea: full width in second column */
 .contact-form form input,
 .contact-form form textarea {
   width: 100%;
@@ -122,10 +117,6 @@ nav a:hover {
   border-radius: 0.5em;
 }
 
-/* Fixed heights for consistency:
-   - Email and Subject inputs: 2.5rem height
-   - Message textarea: 5rem height (double)
-*/
 .contact-form form input[type="email"],
 .contact-form form input[type="text"] {
   height: 2.5rem;
@@ -135,7 +126,6 @@ nav a:hover {
   height: 5rem;
 }
 
-/* The Send button spans both columns */
 .contact-form form button {
   grid-column: 1 / -1;
   width: 100%;
@@ -154,7 +144,7 @@ nav a:hover {
   background-color: #ff4786;
 }
 
-/*5. Projects Page*/
+/* 5. Projects Page */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -192,7 +182,7 @@ nav a:hover {
   font-size: 1em;
 }
 
-/*6. Resume Page*/
+/* 6. Resume Page */
 .resume {
   max-width: 50rem;
   margin: auto;
@@ -244,7 +234,7 @@ nav a:hover {
   padding-left: 1.5em;
 }
 
-/*7. Download Resume Button*/
+/* 7. Download Resume Button */
 .download-resume {
   text-align: center;
   margin-top: 2em;
@@ -267,7 +257,7 @@ nav a:hover {
   background-color: #ff4786;
 }
 
-/*8. Home Page Header Styling*/
+/* 8. Home Page Header Styling */
 .home-header {
   width: 100%;
   max-width: 100ch;
@@ -285,4 +275,14 @@ nav a:hover {
   height: auto;
   display: block;
   margin: 0 auto;
+}
+
+/* 9. Dark Mode Switcher Styling */
+.color-scheme {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  display: inline-flex;
+  gap: 4px;
+  font-size: 80%;
 }
