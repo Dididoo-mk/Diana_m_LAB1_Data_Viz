@@ -41,7 +41,16 @@ document.body.insertAdjacentHTML("afterbegin", `
 let colorSchemeSelect = document.querySelector("#colorSchemeSelect");
 
 function setColorScheme(scheme) {
+  // Set the CSS color-scheme property for system UI adjustments
   document.documentElement.style.setProperty("color-scheme", scheme);
+  // Remove any existing mode classes so we can update them fresh
+  document.documentElement.classList.remove("dark-mode", "light-mode");
+  // Add a class if an explicit theme is chosen
+  if (scheme === "dark") {
+    document.documentElement.classList.add("dark-mode");
+  } else if (scheme === "light") {
+    document.documentElement.classList.add("light-mode");
+  }
   localStorage.colorScheme = scheme;
   console.log("color scheme changed to", scheme);
 }
