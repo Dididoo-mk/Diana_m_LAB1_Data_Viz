@@ -12,7 +12,7 @@
 ------------------------------------------------------ */
 html {
   accent-color: var(--color-accent);
-  color-scheme: light dark; /* Added for automatic dark mode support */
+  color-scheme: light dark; /* Supports both light & dark modes */
 }
 
 body {
@@ -44,16 +44,18 @@ h2 {
   margin: 0.5em 0;
 }
 
-/* 3. Navigation */
+/* ------------------------------------------------------
+   3. Navigation
+------------------------------------------------------ */
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 1em 0;
-  border-bottom: 1px solid var(--border-color);
   margin-bottom: 1em;
   background-color: #ffffff;
-  --border-color: oklch(50% 10% 200 / 40%); /* New variable for border color */
+  --border-color: oklch(50% 10% 200 / 40%); /* Adaptive border color */
+  border-bottom: 1px solid var(--border-color);
 }
 
 nav a {
@@ -77,7 +79,9 @@ nav a:hover {
   background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
 }
 
-/* 4. Contact Page */
+/* ------------------------------------------------------
+   4. Contact Page
+------------------------------------------------------ */
 .contact-form {
   max-width: 40rem;
   margin: auto;
@@ -87,14 +91,12 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Ensure form controls inherit typography */
 .contact-form input,
 .contact-form textarea,
 .contact-form button {
   font: inherit;
 }
 
-/* --- Contact Form Grid Layout --- */
 .contact-form form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -144,7 +146,9 @@ nav a:hover {
   background-color: #ff4786;
 }
 
-/* 5. Projects Page */
+/* ------------------------------------------------------
+   5. Projects Page
+------------------------------------------------------ */
 .projects {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
@@ -182,7 +186,9 @@ nav a:hover {
   font-size: 1em;
 }
 
-/* 6. Resume Page */
+/* ------------------------------------------------------
+   6. Resume Page
+------------------------------------------------------ */
 .resume {
   max-width: 50rem;
   margin: auto;
@@ -234,7 +240,9 @@ nav a:hover {
   padding-left: 1.5em;
 }
 
-/* 7. Download Resume Button */
+/* ------------------------------------------------------
+   7. Download Resume Button
+------------------------------------------------------ */
 .download-resume {
   text-align: center;
   margin-top: 2em;
@@ -257,7 +265,9 @@ nav a:hover {
   background-color: #ff4786;
 }
 
-/* 8. Home Page Header Styling */
+/* ------------------------------------------------------
+   8. Home Page Header Styling
+------------------------------------------------------ */
 .home-header {
   width: 100%;
   max-width: 100ch;
@@ -277,7 +287,9 @@ nav a:hover {
   margin: 0 auto;
 }
 
-/* 9. Dark Mode Switcher Styling */
+/* ------------------------------------------------------
+   9. Dark Mode Switcher Styling
+------------------------------------------------------ */
 .color-scheme {
   position: absolute;
   top: 1rem;
@@ -286,9 +298,34 @@ nav a:hover {
   gap: 4px;
   font-size: 80%;
 }
+
+/* ------------------------------------------------------
+   10. Dark Mode Overrides
+------------------------------------------------------ */
 html.dark-mode body {
-  background-color: #333;
+  background-color: #121212;
   color: #f9f9f9;
+}
+
+html.dark-mode nav {
+  background-color: #1e1e1e;
+}
+
+html.dark-mode nav a {
+  color: #f9f9f9;
+}
+
+html.dark-mode nav a.current {
+  color: #f9f9f9;
+}
+
+html.dark-mode .contact-form,
+html.dark-mode .resume,
+html.dark-mode .projects article,
+html.dark-mode .resume-section {
+  background-color: #1e1e1e;
+  color: #f9f9f9;
+  border-color: rgba(255, 255, 255, 0.2);
 }
 
 html.light-mode body {
