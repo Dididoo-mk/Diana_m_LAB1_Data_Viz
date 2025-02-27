@@ -199,17 +199,18 @@ nav a:hover {
   text-align: center;
 }
 
-/* Force the name and candidate description to be pink */
-.resume h1 {
+/* Candidate info (direct children of .resume) forced to pink */
+.resume > h1 {
   color: #ff69b4;
   font-size: 1.8em;
   margin-bottom: 0.2em;
 }
 
-.resume p strong {
+.resume > p > strong {
   color: #ff69b4;
 }
 
+/* Other resume content remains as defined */
 .resume .intro {
   display: flex;
   justify-content: center;
@@ -332,9 +333,18 @@ html.dark-mode .resume-section {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* Ensure resume text remains pink in dark mode */
-html.dark-mode .resume h1,
-html.dark-mode .resume p strong {
+/* In dark mode, ensure all resume text remains white except for the candidate info */
+html.dark-mode .resume .intro,
+html.dark-mode .resume-content,
+html.dark-mode .resume p,
+html.dark-mode .resume ul,
+html.dark-mode .resume li {
+  color: #f9f9f9;
+}
+
+/* But force the candidate name and candidate info (direct children) to be pink */
+html.dark-mode .resume > h1,
+html.dark-mode .resume > p > strong {
   color: #ff69b4 !important;
 }
 
