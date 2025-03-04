@@ -68,7 +68,6 @@ nav {
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Let each link share remaining space equally */
 nav a {
   flex: 1;
   text-decoration: none;
@@ -78,7 +77,6 @@ nav a {
   transition: all 0.3s ease-in-out;
 }
 
-/* Current page: thicker bottom border, different color */
 nav a.current {
   color: var(--current-page-color);
   border-bottom: 0.4em solid var(--border-color);
@@ -86,7 +84,6 @@ nav a.current {
   font-weight: bold;
 }
 
-/* Hover style uses accent color */
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
@@ -110,7 +107,6 @@ nav a:hover {
   font: inherit;
 }
 
-/* Simple grid layout: label on the left, input on the right */
 .contact-form form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -142,7 +138,6 @@ nav a:hover {
   height: 5rem;
 }
 
-/* Submit button spans both columns */
 .contact-form form button {
   grid-column: 1 / -1;
   width: 100%;
@@ -344,7 +339,6 @@ html.dark-mode .resume-section {
   border-color: rgba(255, 255, 255, 0.2);
 }
 
-/* In dark mode, ensure all resume text remains white except for the candidate info */
 html.dark-mode .resume .intro,
 html.dark-mode .resume-content,
 html-dark-mode .resume p,
@@ -353,7 +347,6 @@ html-dark-mode .resume li {
   color: #f9f9f9;
 }
 
-/* Force the candidate name and candidate info (direct children) to be pink in dark mode */
 html.dark-mode .resume > h1,
 html.dark-mode .resume > p > strong {
   color: #ff69b4 !important;
@@ -368,15 +361,16 @@ html.light-mode body {
    11. Constrain Figures and Images
 ------------------------------------------------------ */
 figure {
-  max-width: 700px;
-  margin: 2em auto;
+  max-width: 700px !important;
+  margin: 2em auto !important;
+  overflow: hidden;
 }
 
 figure img {
-  display: block;
-  margin: 0 auto;
-  width: 100%;
-  max-width: 700px;
-  height: auto;
+  display: block !important;
+  margin: 0 auto !important;
+  width: 100% !important;
+  max-width: 700px !important;
+  height: auto !important;
   object-fit: contain;
 }
