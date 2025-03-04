@@ -19,35 +19,39 @@ html {
 }
 
 body {
-  /* Slightly larger base font (112.5% ~ 18px) and comfortable line-height */
+  /* Keep a comfortable base font size (~18px) and line-height 1.5 */
   font: 112.5%/1.5 system-ui;
 
-  /* Increase max-width to 100ch so it’s not too narrow or “zoomed out” */
-  max-width: 100ch;
+  /* 
+    Use clamp() so the body can grow with the screen size:
+      - Minimum width: 80ch (don’t shrink below 80 characters wide)
+      - Ideal scenario: 90vw (90% of the viewport width)
+      - Maximum width: 120ch (don’t exceed ~120 characters wide)
+  */
+  max-width: clamp(80ch, 90vw, 120ch);
 
-  /* Center the content, ensuring at least 1em margin on small screens */
-  margin-inline: max(1em, calc((100% - 100ch) / 2));
-
-  /* Add some padding so text doesn't hug the edges */
+  /* Center the content horizontally, and add some padding so text
+     doesn’t hug the edges on smaller screens */
+  margin: 0 auto;
   padding: 1em;
 
   background-color: #f9f9f9;
   color: #333;
 }
 
-/* Keep images responsive */
+/* Make images responsive */
 img {
   max-width: 100%;
   height: auto;
 }
 
-/* Headings: keep a tight line-height, but not huge */
+/* Give headings a tighter line-height; keep them distinct in size */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
 h1 {
-  /* Reduced from super-large to 2rem for clarity */
+  /* Increase heading contrast; you can tweak bigger if you like */
   font-size: 2rem;
   margin: 0.5em 0;
 }
@@ -60,6 +64,13 @@ h2 {
 /* ------------------------------------------------------
    3. Navigation
 ------------------------------------------------------ */
+/* If using <ul> and <li> in <nav>, you can remove default list styling like so:
+nav ul,
+nav li {
+  display: contents;
+}
+*/
+
 nav {
   display: flex;
   justify-content: space-around;
@@ -72,7 +83,7 @@ nav {
   border-bottom: 1px solid var(--border-color);
 }
 
-/* Navigation links take up equal space */
+/* Let each link share remaining space equally */
 nav a {
   flex: 1;
   text-decoration: none;
@@ -82,7 +93,7 @@ nav a {
   transition: all 0.3s ease-in-out;
 }
 
-/* Current page link is highlighted with a thicker border */
+/* Current page: thicker bottom border, different color */
 nav a.current {
   color: var(--current-page-color);
   border-bottom: 0.4em solid var(--border-color);
@@ -90,7 +101,7 @@ nav a.current {
   font-weight: bold;
 }
 
-/* Hover effect uses the accent color */
+/* Hover style uses accent color */
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
@@ -108,14 +119,13 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
-/* Let form controls inherit the same font as body */
 .contact-form input,
 .contact-form textarea,
 .contact-form button {
   font: inherit;
 }
 
-/* Simple grid for label-input alignment */
+/* Simple grid layout: label on the left, input on the right */
 .contact-form form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -147,7 +157,7 @@ nav a:hover {
   height: 5rem;
 }
 
-/* Send button spans full width */
+/* Submit button spans both columns */
 .contact-form form button {
   grid-column: 1 / -1;
   width: 100%;
@@ -170,22 +180,24 @@ nav a:hover {
    5. Projects Page (Responsive Grid)
 ------------------------------------------------------ */
 .projects {
-  /* Let the grid fill up to 100ch (the body’s max-width),
-     and adapt columns automatically. */
+  /* 
+    Use a grid that adapts to screen width:
+      - auto-fill places as many columns as fit
+      - each column is min 15em wide, or 1fr if bigger
+  */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1.5em;
   padding: 2em;
-  margin: auto; /* Center if narrower than 100ch, or fill if wide enough */
+  margin: auto;
 }
 
-/* Use subgrid for rows if you want headings & images to align across columns */
 .projects article {
   display: grid;
-  /* If you want each article to align its rows across columns, you can use subgrid:
+  /* If you want each article to align rows across columns, you could do:
      grid-template-rows: subgrid;
-     grid-row: span 3; 
-     (But subgrid might not be fully supported in older browsers.)
+     grid-row: span 3;
+     (Subgrid is still partial support in older browsers.)
   */
   background-color: #ffffff;
   border-radius: 0.8em;
@@ -301,6 +313,7 @@ nav a:hover {
    8. Home Page Header Styling
 ------------------------------------------------------ */
 .home-header {
+  /* We still clamp the overall width from body, but you can remove max-width if you prefer full width. */
   width: 100%;
   max-width: 100ch;
   margin: 0 auto 2em auto;
