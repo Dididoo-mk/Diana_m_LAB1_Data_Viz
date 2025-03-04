@@ -1,12 +1,18 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <title>Vis & Society Assignment 3</title>
-  <!-- Your external stylesheet -->
-  <link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+  <!-- Make sure your page scales correctly on mobile devices -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Optionally, you can add local figure/img styling if not already in your CSS -->
+  <!-- External stylesheet from the course (loads first) -->
+  <link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css">
+
+  <!-- Your local stylesheet (loads after report.css, so your overrides win) -->
+  <link rel="stylesheet" href="../style.css">
+
+  <!-- Optional local figure/img styling if not already in your CSS -->
   <style>
     figure {
       max-width: 100%;
@@ -22,10 +28,9 @@
 </head>
 <body>
   <header>
-    <h1>
-      <small>Assignment 3</small>
-      Visualization Critique &amp; Redesign
-    </h1>
+    <!-- Reworked heading structure -->
+    <h1>Visualization Critique &amp; Redesign</h1>
+    <h2>Assignment 3</h2>
     <p>
       <strong>Diana Mykhaylychenko</strong> &mdash; <em>diana_mk@mit.edu</em>
     </p>
@@ -158,11 +163,11 @@
     </ul>
 
     <h3>Sketch 3: Radial Bar Chart</h3>
- 
     <figure>
-        <img src="../images/A3_10_3.jpg" alt="Radial Bar Chart" />
-        <figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Radial Bar Chart</figcaption>
-      </figure>
+      <img src="../images/A3_10_3.jpg" alt="Radial Bar Chart" />
+      <figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Radial Bar Chart</figcaption>
+    </figure>
+
     <h3>Why I Chose This Design</h3>
     <ul>
       <li>I wanted to keep the cyclical feel of the original spiral while making it clearer and easier to compare across years – a radial bar chart works well for this because it separates each year’s data into its own ring.</li>

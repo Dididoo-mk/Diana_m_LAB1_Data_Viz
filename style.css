@@ -16,12 +16,12 @@ html {
 }
 
 body {
-  /* 100% ~ 16px base; line-height 1.5 is good for readability */
-  font: 100%/1.5 system-ui;
-  /* Adjust max-width if you want narrower text columns (e.g., 80ch or 60ch) */
-  max-width: 100ch;
-  margin-left: max(1em, calc((100% - 100ch) / 2));
-  margin-right: max(1em, calc((100% - 100ch) / 2));
+  /* Increased base font from 100% (~16px) to 112.5% (~18px) for larger text */
+  font: 112.5%/1.5 system-ui;
+  /* Narrower text column for better readability (reduced from 100ch to 60ch) */
+  max-width: 60ch;
+  margin-left: max(1em, calc((100% - 60ch) / 2));
+  margin-right: max(1em, calc((100% - 60ch) / 2));
   padding: 1em;
   background-color: #f9f9f9;
   color: #333;
