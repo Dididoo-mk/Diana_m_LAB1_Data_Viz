@@ -1,165 +1,221 @@
 <!DOCTYPE HTML>
 <html lang="en">
 <head>
-	<title>Vis & Society Assignment 2</title>
-	<link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+  <meta charset="UTF-8">
+  <title>Vis & Society Assignment 3</title>
+  <!-- Your external stylesheet -->
+  <link rel="stylesheet" href="https://vis-society.github.io/assignments/report.css" />
+
+  <!-- Optionally, you can add local figure/img styling if not already in your CSS -->
+  <style>
+    figure {
+      max-width: 100%;
+      margin: 1em auto;
+      text-align: center;
+    }
+    figure img {
+      display: inline-block;
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
 </head>
 <body>
-	<header>
-		<h1>
-			<small>Assignment 3</small>
-			Visualization Critique & Redesign
-		</h1>
-		<p>
-			<strong>Diana Mykhaylychenko</strong> — <em>diana_mk@mit.edu</em>
-		</p>
-	</header>
-	<main>
-		<section>
-			<h2>Original Visualization from the Assignment</h2>
-            <h3>Introduction</h3>
-			<ol>
-				<p>For this assignment, we were asked to analyze and critique a well-known data visualization, looking at what works, what doesn’t, and how it could be improved. The visualization we examined comes from The New York Times, where it was used to illustrate the rise and fall of COVID-19 cases during the Omicron variant peak. The article was written by Dr. Jeffrey Shaman, an epidemiologist and infectious disease modeler at Columbia University, whose team helped develop some of the earliest COVID-19 models. </p>
-                <p>Here is the original visualization:</p>
-                <p> </p>
-			</ol>
-            
-			<figure>
-				<img src="../images/A3_10_1.jpg">
-				<figcaption>New Covid-19 Cases United States</figcaption>
-			</figure>
+  <header>
+    <h1>
+      <small>Assignment 3</small>
+      Visualization Critique &amp; Redesign
+    </h1>
+    <p>
+      <strong>Diana Mykhaylychenko</strong> &mdash; <em>diana_mk@mit.edu</em>
+    </p>
+  </header>
 
-            <h3>Insights from the Visualization</h3>
-<ul>
-    <li>The spiral chart depicts new COVID-19 cases in the U.S. from 2020 to early 2022, with each loop representing a year.</li>
-    <li>Thicker red bands indicate higher case counts, showing major surges in winter months, especially January 2021 and January 2022, with 2022 reaching the highest peak (Omicron variant).</li>
-    <li>The pattern highlights recurring waves of infection, with each winter surge surpassing the previous year.</li>
-    <li>While the spiral format conveys the cyclical nature of the pandemic, it makes precise comparisons between years difficult due to distortion.</li>
-</ul>
-             
-<h3>Critique</h3>
-<p>The spiral visualization does a creative job of encoding time and COVID-19 case trends, but its effectiveness in communicating key insights is questionable. The spiral shape highlights the cyclical nature of the pandemic, drawing connections between peaks across years, but the complexity it adds makes it harder to interpret precisely. The varying thickness of the spiral bands does a good job showing case surges, but the radial scale is unconventional and might confuse viewers at first glance. Without clear tick marks or numerical labels for case counts, the audience is left to estimate values rather than read them directly. Additionally, the focus on winter peaks, while important, makes it difficult to capture the smaller fluctuations within each year—a more linear format would serve that purpose better. The spiral visualization effectively captures the pandemic's cyclical nature, emphasizing recurring peaks during winter months. However, its unconventional design may prioritize aesthetics over functional clarity, making precise data interpretation challenging for some viewers.</p>
+  <main>
+    <section>
+      <h2>Original Visualization from the Assignment</h2>
+      <h3>Introduction</h3>
+      <p>
+        For this assignment, we were asked to analyze and critique a well-known data visualization, 
+        looking at what works, what doesn’t, and how it could be improved. The visualization we examined 
+        comes from The New York Times, where it was used to illustrate the rise and fall of COVID-19 cases 
+        during the Omicron variant peak. The article was written by Dr. Jeffrey Shaman, an epidemiologist 
+        and infectious disease modeler at Columbia University, whose team helped develop some of the 
+        earliest COVID-19 models.
+      </p>
+      <p>Here is the original visualization:</p>
 
-<p>While the target audience—general readers interested in pandemic trends—might grasp the broad message of waves rising and falling, the visualization requires a lot of effort to interpret. The takeaway about seasonal surges and pandemic persistence is there, but it could be more clearly emphasized with annotations or comparative markers. Labeling is sparse, leaving viewers to figure out the meaning of shaded regions and the spiral’s growth. The spacing and layout are visually appealing, but they prioritize aesthetics over clarity, as the overlapping arms of the spiral obscure year-to-year comparisons. A more traditional time-series chart, small multiples, or stacked area chart would boost readability while still delivering the core message.</p>
+      <figure>
+        <img src="../images/A3_original.jpg" alt="Spiral COVID-19 Chart from the NYT" />
+        <figcaption>New Covid-19 Cases United States</figcaption>
+      </figure>
 
-            <h2>Exploring Alternative Visualizations: Addressing the Spiral’s Limitations</h2>
-            <h3>Sketch 1: COVID-19 Case Trends In The U.S. (2020-2022) – Stacked Area Chart</h3>
-            <figure>
-				<img src="../images/A3_10_2.jpg">
-				<figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Stacked Area Chart</figcaption>
-			</figure>
-<h3>Rationale for Design Decisions</h3>
-<ul>
-    <li>The stacked area chart replaces the spiral format to allow for a clearer year-over-year comparison of COVID-19 case trends.</li>
-    <li>Time is plotted on a standard X-axis, making it easier to follow trends month by month.</li>
-    <li>The Y-axis represents the total number of new monthly cases, making it easy to see the relative severity of each pandemic wave.</li>
-    <li>Each year is color-coded to differentiate trends while maintaining visual clarity.</li>
-</ul>
+      <h3>Insights from the Visualization</h3>
+      <ul>
+        <li>The spiral chart depicts new COVID-19 cases in the U.S. from 2020 to early 2022, with each loop representing a year.</li>
+        <li>Thicker red bands indicate higher case counts, showing major surges in winter months, especially January 2021 and January 2022, with 2022 reaching the highest peak (Omicron variant).</li>
+        <li>The pattern highlights recurring waves of infection, with each winter surge surpassing the previous year.</li>
+        <li>While the spiral format conveys the cyclical nature of the pandemic, it makes precise comparisons between years difficult due to distortion.</li>
+      </ul>
 
-<h3>What Worked Well?</h3>
-<ul>
-    <li>Trends are easier to interpret compared to the original spiral, making it clear when and how case surges occurred.</li>
-    <li>Seasonal peaks (especially in winter) stand out clearly, with the largest spikes in January 2021 and January 2022.</li>
-    <li>Layering the years allows for a direct comparison, showing that each winter surge surpassed the previous year’s peak.</li>
-</ul>
+      <h3>Critique</h3>
+      <p>
+        The spiral visualization does a creative job of encoding time and COVID-19 case trends, 
+        but its effectiveness in communicating key insights is questionable. The spiral shape highlights 
+        the cyclical nature of the pandemic, drawing connections between peaks across years, but the 
+        complexity it adds makes it harder to interpret precisely. The varying thickness of the spiral bands 
+        does a good job showing case surges, but the radial scale is unconventional and might confuse viewers 
+        at first glance. Without clear tick marks or numerical labels for case counts, the audience is left 
+        to estimate values rather than read them directly. Additionally, the focus on winter peaks, while 
+        important, makes it difficult to capture the smaller fluctuations within each year—a more linear 
+        format would serve that purpose better. The spiral visualization effectively captures the pandemic's 
+        cyclical nature, emphasizing recurring peaks during winter months. However, its unconventional 
+        design may prioritize aesthetics over functional clarity, making precise data interpretation 
+        challenging for some viewers.
+      </p>
+      <p>
+        While the target audience—general readers interested in pandemic trends—might grasp the broad 
+        message of waves rising and falling, the visualization requires a lot of effort to interpret. 
+        The takeaway about seasonal surges and pandemic persistence is there, but it could be more clearly 
+        emphasized with annotations or comparative markers. Labeling is sparse, leaving viewers to figure 
+        out the meaning of shaded regions and the spiral’s growth. The spacing and layout are visually 
+        appealing, but they prioritize aesthetics over clarity, as the overlapping arms of the spiral 
+        obscure year-to-year comparisons. A more traditional time-series chart, small multiples, or 
+        stacked area chart would boost readability while still delivering the core message.
+      </p>
+    </section>
 
-<h3>Challenges & Limitations</h3>
-<ul>
-    <li>If case numbers are too high, the layering might make it harder to distinguish trends for individual years.</li>
-    <li>Seasonal patterns may not stand out as prominently as in the spiral format since all years are stacked together.</li>
-    <li>Smaller fluctuations within each year are not as visible as they would be in a line chart.</li>
-</ul>
+    <h2>Exploring Alternative Visualizations: Addressing the Spiral’s Limitations</h2>
+    
+    <h3>Sketch 1: COVID-19 Case Trends In The U.S. (2020-2022) – Stacked Area Chart</h3>
+    <figure>
+      <img src="../images/A3_10_1.jpg" alt="Stacked Area Chart Sketch" />
+      <figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Stacked Area Chart</figcaption>
+    </figure>
+    <h3>Rationale for Design Decisions</h3>
+    <ul>
+      <li>The stacked area chart replaces the spiral format to allow for a clearer year-over-year comparison of COVID-19 case trends.</li>
+      <li>Time is plotted on a standard X-axis, making it easier to follow trends month by month.</li>
+      <li>The Y-axis represents the total number of new monthly cases, making it easy to see the relative severity of each pandemic wave.</li>
+      <li>Each year is color-coded to differentiate trends while maintaining visual clarity.</li>
+    </ul>
 
-<h3>Next Steps: What to Explore in the Next Sketch?</h3>
-<ul>
-    <li>I am thinking of “Small Multiples” approach where each year is plotted separately but aligned, making year-over-year trends clearer.</li>
-    <li>I think that experimenting with a Multi-Line Chart might result in better highlight seasonal trends without overlapping layers.</li>
-    <li>Also, adding annotations for major peaks (Omicron, Delta, Winter 2020) to improve readability and data storytelling.</li>
-</ul>
+    <h3>What Worked Well?</h3>
+    <ul>
+      <li>Trends are easier to interpret compared to the original spiral, making it clear when and how case surges occurred.</li>
+      <li>Seasonal peaks (especially in winter) stand out clearly, with the largest spikes in January 2021 and January 2022.</li>
+      <li>Layering the years allows for a direct comparison, showing that each winter surge surpassed the previous year’s peak.</li>
+    </ul>
 
+    <h3>Challenges & Limitations</h3>
+    <ul>
+      <li>If case numbers are too high, the layering might make it harder to distinguish trends for individual years.</li>
+      <li>Seasonal patterns may not stand out as prominently as in the spiral format since all years are stacked together.</li>
+      <li>Smaller fluctuations within each year are not as visible as they would be in a line chart.</li>
+    </ul>
 
-<h3>Sketch 2: Multi-Line Chart (Small Multiples) – Design Rationale & Reflection</h3>
-<figure>
-    <img src="../images/A3_10_3.jpg">
-    <figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Stacked Area Chart</figcaption>
-</figure>
+    <h3>Next Steps: What to Explore in the Next Sketch?</h3>
+    <ul>
+      <li>I am thinking of a “Small Multiples” approach where each year is plotted separately but aligned, making year-over-year trends clearer.</li>
+      <li>Experimenting with a Multi-Line Chart might better highlight seasonal trends without overlapping layers.</li>
+      <li>Adding annotations for major peaks (Omicron, Delta, Winter 2020) could improve readability and data storytelling.</li>
+    </ul>
 
+    <h3>Sketch 2: Multi-Line Chart (Small Multiples) – Design Rationale &amp; Reflection</h3>
+    <figure>
+      <img src="../images/A3_10_2.jpg" alt="Multi-Line Chart Sketch" />
+      <figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Multi-Line Chart</figcaption>
+    </figure>
 
-<h3>Rationale for Design Decisions</h3>
-<ul>
-    <li>Instead of stacking all data in a single chart, this approach separates each year into its own subplot, making trends easier to follow.</li>
-    <li>The same X-axis (months) is used across all three charts to allow for direct year-over-year comparisons without distortion.</li>
-    <li>A simple line chart format is used to ensure clarity and precision, avoiding the potential clutter of stacked area charts.</li>
-    <li>Color-coding each year helps differentiate the data while maintaining visual consistency.</li>
-</ul>
+    <h3>Rationale for Design Decisions</h3>
+    <ul>
+      <li>Instead of stacking all data in a single chart, this approach separates each year into its own subplot, making trends easier to follow.</li>
+      <li>The same X-axis (months) is used across all three charts to allow for direct year-over-year comparisons without distortion.</li>
+      <li>A simple line chart format is used to ensure clarity and precision, avoiding the potential clutter of stacked area charts.</li>
+      <li>Color-coding each year helps differentiate the data while maintaining visual consistency.</li>
+    </ul>
 
-<h3>What Worked Well?</h3>
-<ul>
-    <li>Preserves each year’s trends without overlap, making seasonality and pandemic waves stand out clearly.</li>
-    <li>Reduces visual clutter compared to stacked area or spiral charts.</li>
-    <li>Makes year-to-year comparisons more intuitive, as users can directly look at corresponding months in different years.</li>
-    <li>Maintains a strong focus on seasonal peaks, particularly January 2021 and January 2022 surges.</li>
-</ul>
+    <h3>What Worked Well?</h3>
+    <ul>
+      <li>Preserves each year’s trends without overlap, making seasonality and pandemic waves stand out clearly.</li>
+      <li>Reduces visual clutter compared to stacked area or spiral charts.</li>
+      <li>Makes year-to-year comparisons more intuitive, as users can directly look at corresponding months in different years.</li>
+      <li>Maintains a strong focus on seasonal peaks, particularly January 2021 and January 2022 surges.</li>
+    </ul>
 
-<h3>Challenges & Limitations</h3>
-<ul>
-    <li>Takes up more space than a single combined chart, which might make it harder to present in compact formats.</li>
-    <li>Comparing exact values across years requires scanning between subplots, rather than seeing trends in one unified graph.</li>
-    <li>Less emphasis on cumulative growth, since years are separated rather than stacked.</li>
-</ul>
+    <h3>Challenges & Limitations</h3>
+    <ul>
+      <li>Takes up more space than a single combined chart, which might make it harder to present in compact formats.</li>
+      <li>Comparing exact values across years requires scanning between subplots, rather than seeing trends in one unified graph.</li>
+      <li>Less emphasis on cumulative growth, since years are separated rather than stacked.</li>
+    </ul>
 
-<h3>Next Steps: What to Explore in the Next Sketch?</h3>
-<ul>
-    <li>I’m thinking of overlaying the lines into a single chart instead of splitting them into separate subplots. This way, it’ll be easier to compare year-over-year trends without having to scan between different sections.</li>
-    <li>To avoid making it messy, I’d use transparency or dashed lines so overlapping trends don’t get confusing. That should help keep things clear while still showing how cases rose and fell each year.</li>
-    <li>Another thing I want to try is adding annotations or markers for key events—like the Omicron and Delta surges. Right now, the chart shows overall trends well, but it could do a better job of highlighting the biggest moments in the pandemic.</li>
-</ul>
+    <h3>Next Steps: What to Explore in the Next Sketch?</h3>
+    <ul>
+      <li>I’m thinking of overlaying the lines into a single chart instead of splitting them into separate subplots. This way, it’ll be easier to compare year-over-year trends without having to scan between different sections.</li>
+      <li>To avoid making it messy, I’d use transparency or dashed lines so overlapping trends don’t get confusing. That should help keep things clear while still showing how cases rose and fell each year.</li>
+      <li>Another thing I want to try is adding annotations or markers for key events—like the Omicron and Delta surges. Right now, the chart shows overall trends well, but it could do a better job of highlighting the biggest moments in the pandemic.</li>
+    </ul>
 
-<h3>Sketch 3: Radial Bar Chart</h3>
-<figure>
-    <img src="../images/A3_10_3.pdf">
-    <figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Stacked Area Chart</figcaption>
-</figure>
+    <h3>Sketch 3: Radial Bar Chart</h3>
+    <!-- If you only have a PDF, consider linking to it rather than using <img>. 
+         Otherwise, convert the PDF to a .jpg/.png to display it directly. -->
+    <figure>
+      <!-- Example if you have a .jpg -->
+      <!-- <img src="../images/A3_10_3.jpg" alt="Radial Bar Chart Sketch" /> -->
 
+      <!-- If you must use the PDF, do this: -->
+      <a href="../images/A3_10_3.jpg" target="_blank">
+        <strong>View Radial Bar Chart (PDF)</strong>
+      </a>
+      <figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Radial Bar Chart</figcaption>
+    </figure>
 
-<h3>Why I Chose This Design</h3>
-<ul>
-    <li>I wanted to keep the cyclical feel of the original spiral while making it clearer and easier to compare across years – a radial bar chart works well for this because it separates each year’s data into its own ring.</li>
-    <li>Color choices help distinguish the years while keeping a logical progression.</li>
-    <li>Offsets between the rings ensure that 2020 isn’t hidden, which was a problem in earlier versions.</li>
-</ul>
+    <h3>Why I Chose This Design</h3>
+    <ul>
+      <li>I wanted to keep the cyclical feel of the original spiral while making it clearer and easier to compare across years – a radial bar chart works well for this because it separates each year’s data into its own ring.</li>
+      <li>Color choices help distinguish the years while keeping a logical progression.</li>
+      <li>Offsets between the rings ensure that 2020 isn’t hidden, which was a problem in earlier versions.</li>
+    </ul>
 
-<h3>What Worked Well?</h3>
-<ul>
-    <li>Keeps the cyclical nature of the data while making trends across years much easier to compare.</li>
-    <li>Seasonality is clear – The January peaks in 2021 and 2022 stand out well.</li>
-    <li>Better readability than the spiral chart – No confusing overlaps, and everything is spaced out clearly.</li>
-    <li>Edge outlines help – They make each bar more distinct, improving contrast.</li>
-</ul>
+    <h3>What Worked Well?</h3>
+    <ul>
+      <li>Keeps the cyclical nature of the data while making trends across years much easier to compare.</li>
+      <li>Seasonality is clear – The January peaks in 2021 and 2022 stand out well.</li>
+      <li>Better readability than the spiral chart – No confusing overlaps, and everything is spaced out clearly.</li>
+      <li>Edge outlines help – They make each bar more distinct, improving contrast.</li>
+    </ul>
 
-<h3>What Didn’t Work So Well?</h3>
-<ul>
-    <li>You can’t immediately see exact case numbers, since it’s based on bar height instead of a labeled Y-axis.</li>
-    <li>Radial layouts can exaggerate differences, since bars further out might look disproportionately large.</li>
-</ul>
+    <h3>What Didn’t Work So Well?</h3>
+    <ul>
+      <li>You can’t immediately see exact case numbers, since it’s based on bar height instead of a labeled Y-axis.</li>
+      <li>Radial layouts can exaggerate differences, since bars further out might look disproportionately large.</li>
+    </ul>
 
-<h3>Next Steps: Where to Go From Here?</h3>
-<p>I’m thinking that maybe a radial heatmap would work better instead of bars. It could use a color gradient to show case intensity, making it easier to compare months at a glance. Right now, the bars are useful, but they don’t quite capture the smooth rise and fall of cases as well as a heatmap might.</p>
+    <h3>Next Steps: Where to Go From Here?</h3>
+    <p>
+      I’m thinking that maybe a radial heatmap would work better instead of bars. It could use a color gradient to show 
+      case intensity, making it easier to compare months at a glance. Right now, the bars are useful, but they don’t 
+      quite capture the smooth rise and fall of cases as well as a heatmap might.
+    </p>
+    <p>
+      I also want to try a semi-circular version instead of a full circle. A half-circle layout might make it easier to read, 
+      since people are more used to looking at timelines from left to right rather than in a full loop.
+    </p>
+    <p>
+      Another thing I’m considering is overlaying a line chart inside the radial structure. That way, I could still show the 
+      overall trend of rising and falling cases while keeping the visual impact of the circular format. Right now, the bars 
+      show volume well, but they don’t really track the continuous flow of the pandemic waves.
+    </p>
+    <p>These are a few things I want to explore next to make the visualization more intuitive, readable, and insightful.</p>
 
-<p>I also want to try a semi-circular version instead of a full circle. A half-circle layout might make it easier to read, since people are more used to looking at timelines from left to right rather than in a full loop.</p>
+    <!-- Back Link to Projects -->
+    <p><a href="../projects/index.html">&larr; Back to Projects</a></p>
+  </main>
 
-<p>Another thing I’m considering is overlaying a line chart inside the radial structure. That way, I could still show the overall trend of rising and falling cases while keeping the visual impact of the circular format. Right now, the bars show volume well, but they don’t really track the continuous flow of the pandemic waves.</p>
-
-<p>These are a few things I want to explore next to make the visualization more intuitive, readable, and insightful.</p>
-
-
-
-		<!-- Back Link to Projects -->
-		<p><a href="../projects/index.html">&larr; Back to Projects</a></p>
-	</main>
-	<!-- Footer -->
-	<footer>
-		<p>&copy; 2025 Diana's Website</p>
-	</footer>
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Diana's Website</p>
+  </footer>
 </body>
 </html>
