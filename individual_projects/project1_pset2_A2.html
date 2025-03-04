@@ -17,59 +17,83 @@
 	<main>
 		<section>
 			<h2>Subtheme: Corporate Ownership & Housing Instability</h2>
-            <h3>Introduction</h3>
-			<ol>
-				<p>This report examines the relationship between corporate ownership of residential properties, owner-occupancy trends, racial demographics, and potential eviction risks in Boston neighborhoods from 2004 to 2024. Prior research suggests that corporate landlords file for more evictions than live-in landlords, disproportionately affecting communities of color. This study analyzes data from Boston property assessments and census records to evaluate these claims.</p>
-			</ol>
-            <h3>Data Overview</h3>
-            <h4>The datasets used in this study include:</h4>
-            
-            <ul>
-              <li><strong>Boston Neighborhoods and Zip Codes:</strong> Provides mapping between neighborhoods and zip codes.</li>
-              <li><strong>Census and Corporate Ownership Data:</strong> Contains demographic breakdowns, owner-occupancy rates, corporate ownership rates, and institutionalized population data.</li>
-              <li><strong>Corporate Ownership Over Time:</strong> Tracks corporate ownership rates and owner-occupancy rates across neighborhoods over 20 years.</li>
-            </ul>
-            
-            <h4>Key Variables Analyzed</h4>
-            <ul>
-              <li>Corporate ownership rate (% of properties owned by corporations)</li>
-              <li>Owner-occupancy rate (% of properties occupied by owners)</li>
-              <li>Demographics: Racial breakdowns (Black, Hispanic, White, Asian populations)</li>
-              <li>Housing characteristics: Vacancy rates, total housing units</li>
-            </ul>
-            
-            <p>Even though the datasets don't explicitly provide the number of rental units, we can infer it. The rental units percentage will be equal to 1 - (owner occupancy percentage), while the number of rental units will equal the total number of units multiplied by the rental units percentage.</p>
-            
-            <p>Neither of the provided data sets in .csv have any information on the rates of evictions. However, we were able to extract relevant data from the readings (report) and sources used by the authors of the report.</p>
-			<h3>Overall Analysis Questions</h3>
-			<ol>
-				<li>How does corporate ownership correlate with housing instability?</li>
-				<li>What demographic trends emerge from the eviction data?</li>
-				<li>How can property, census, and court data be integrated to reveal spatial patterns?</li>
-			</ol>
-		</section>
-		<section>
-			<h2>Discoveries & Insights</h2>
-			
-			<h3>Figure 1: Eviction Dynamics Visualization</h3>
-			<figure>
-				<img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Visualization of eviction dynamics">
-				<figcaption>Visualization of eviction dynamics across neighborhoods.</figcaption>
-			</figure>
-			<p>This figure displays the spatial distribution of eviction filings across different neighborhoods, highlighting areas with higher corporate landlord presence.</p>
-			
-			<h3>Figure 2: Interactive Data Visualization</h3>
-			<figure>
-				<img src="https://via.placeholder.com/400x300" alt="Interactive Data Visualization">
-				<figcaption>Interactive visualizations highlighting key eviction trends.</figcaption>
-			</figure>
-			<p>This interactive visualization allows users to explore various metrics related to eviction trends, facilitating deeper insight into the underlying data.</p>
-			<!-- Additional figures can be added following the same structure -->
-		</section>
-		<section>
-			<h2>Summary</h2>
+			<h1>Corporate Landlords &amp; Evictions</h1>
 			<p>
-				This project integrates Boston property and census data with court eviction filings to explore how corporate ownership correlates with housing instability across neighborhoods. Through detailed data integration and interactive visualizations, the analysis reveals nuanced patterns and trends driven by institutional landlord practices.
+			  Prior research (such as the Homes For All report below) has shown that corporate and absentee landlords evicted more people during COVID in the state of MA. Evictions can have devastating impacts on residents, families and communities. Conversely, live-in (or live-nearby) landlords tended to file for fewer evictions, leading the report to make a recommendation that local control of property contributes to housing stability. Communities of color, especially Black and Latinx people, faced particularly high rates of eviction. Do these findings hold up in the City of Boston? Are there more evictions in census tracts with less owners living in them? How have rates of owner occupancy and corporate ownership in Boston changed over time? Are there more corporate landlords now than there have been in the past?
+			</p>
+		  
+			<h2>1. Introduction</h2>
+			<p>
+			  In this report I examined the relationship between corporate ownership of residential properties, owner-occupancy trends, racial demographics, and potential eviction risks in Boston neighborhoods from 2004 to 2024. Prior research (such as the Homes for All MA report and NYT article) suggests that corporate landlords are more likely to file eviction proceedings than live-in landlords, disproportionately affecting communities of color. This study analyzes data from Boston property assessments and census records to evaluate these claims and to explore how changes in ownership structures might influence eviction filing rates.
+			</p>
+			<p><strong>Key questions include:</strong></p>
+			<ul>
+			  <li>Are neighborhoods with more corporate-owned (or absentee) properties experiencing higher rates of eviction?</li>
+			  <li>Have corporate ownership and owner-occupancy rates changed significantly over the past 20 years?</li>
+			  <li>Are there notable racial disparities in where evictions are concentrated?</li>
+			  <li>How do corporate ownership and owner-occupancy rates compare across Boston neighborhoods?</li>
+			  <li>What is the relationship between owner-occupancy rates and eviction filing rates in Boston neighborhoods?</li>
+			</ul>
+			<p>
+			  In this report, I used aggregated neighborhood-level and census data on property ownership and demographics, as well as eviction filing data drawn from Massachusetts court filings, to examine and answer those questions.
+			</p>
+		  
+			<h2>2. Data Overview</h2>
+			<p>The datasets used in this study include:</p>
+			<ul>
+			  <li><strong>Boston Neighborhoods and Zip Codes:</strong> Provides mapping between neighborhoods and zip codes.</li>
+			  <li><strong>Census and Corporate Ownership Data:</strong> Contains demographic breakdowns, owner-occupancy rates, corporate ownership rates, and institutionalized population data.</li>
+			  <li><strong>Corporate Ownership Over Time:</strong> Tracks corporate ownership rates and owner-occupancy rates across neighborhoods over 20 years.</li>
+			</ul>
+			<p><strong>Key variables analyzed:</strong></p>
+			<ul>
+			  <li>Corporate ownership rate (% of properties owned by corporations)</li>
+			  <li>Owner-occupancy rate (% of properties occupied by owners)</li>
+			  <li>Demographics: Racial breakdowns (Black, Hispanic, White, Asian populations)</li>
+			</ul>
+			<p>
+			  Although the datasets do not directly provide total numbers of rental units, one can approximate by using 1 – (owner occupancy rate) as the rental percentage. Neither of the provided data sets in .csv had any information on the number of evictions or rates of evictions across neighborhoods. Therefore, the eviction-filing numbers were obtained from external reporting (including Mass Landlords association, Massachusetts court filings, city records, and analyses by advocacy organizations).
+			</p>
+		  
+			<h2>3. Key Findings</h2>
+			<h3>Corporate Ownership Is Rising Citywide</h3>
+			<ul>
+			  <li>
+				From 2004 to 2024, corporate ownership of housing stock steadily increased in nearly every Boston neighborhood. Certain areas such as Roxbury, Downtown, and the South Boston Waterfront experienced sharper post-2015 accelerations, indicating significant investor activity.
+			  </li>
+			</ul>
+		  
+			<h3>Owner-Occupancy Rates Remain Higher in Peripheral Neighborhoods</h3>
+			<ul>
+			  <li>
+				Neighborhoods like West Roxbury, Roslindale, and Hyde Park continue to have a high share of owner-occupied homes, showing only moderate drops in owner-occupancy over the 20-year period. Central neighborhoods—especially those with substantial student populations (e.g., Allston, Mission Hill)—maintained low owner-occupancy rates, indicating that rental markets remain dominant there.
+			  </li>
+			</ul>
+		  
+			<h3>Evictions Are More Prevalent Where Owners Do Not Reside</h3>
+			<ul>
+			  <li>
+				Across Boston’s neighborhoods, low owner-occupancy correlates strongly with higher eviction filing rates. Neighborhoods such as East Boston, Mattapan, and parts of Dorchester, which have lower proportions of live-in owners, also show some of the highest eviction filing rates.
+			  </li>
+			</ul>
+		  
+			<h3>Communities of Color Experience Disproportionately Higher Eviction Rates</h3>
+			<ul>
+			  <li>
+				Aligning with prior research, census tracts that have higher percentages of Black and Latinx residents tend to face higher eviction filing rates. This pattern suggests that residents of color may be especially vulnerable to displacement pressures in neighborhoods dominated by corporate or absentee ownership.
+			  </li>
+			</ul>
+		  
+			<h3>Investor Purchases in Traditionally Renter-Heavy Areas</h3>
+			<ul>
+			  <li>
+				Renter-heavy neighborhoods (e.g., East Boston, parts of Roxbury) have seen notable spikes in corporate ownership. Coupled with existing lower owner-occupancy, these changes can lead to increased churn in rental housing and a heightened risk of eviction for tenants.
+			  </li>
+			</ul>
+		  
+			<h2>4. Research Questions &amp; Future Analysis</h2>
+			<p>
+			  Below are the key research questions I formulated that guided my research and analysis of the topic. Each question is followed by summaries of the relevant visual analyses.
 			</p>
 		</section>
 		<!-- Back Link to Projects -->
