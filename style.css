@@ -1,6 +1,6 @@
 /* ------------------------------------------------------
    1. Global Color Variables
--------------------------------------------- */
+------------------------------------------------------ */
 :root {
   --color-accent: oklch(65% 50% 0);
   --border-gray: oklch(80% 3% 200);
@@ -26,7 +26,7 @@ body {
      - Maximum width: 120ch (don’t exceed ~120 characters wide)
   */
   max-width: clamp(80ch, 90vw, 120ch);
-  /* Center the content horizontally, and add some padding so text doesn’t hug the edges on smaller screens */
+  /* Center the content horizontally, and add padding so text doesn’t hug edges on smaller screens */
   margin: 0 auto;
   padding: 1em;
   background-color: #f9f9f9;
@@ -358,19 +358,21 @@ html.light-mode body {
 }
 
 /* ------------------------------------------------------
-   11. Constrain Figures and Images
+   11. Constrain Figures and Images within Main Content
 ------------------------------------------------------ */
-figure {
+main section figure {
   max-width: 700px !important;
+  width: 100% !important;
   margin: 2em auto !important;
-  overflow: hidden;
+  overflow: hidden !important;
+  box-sizing: border-box !important;
 }
 
-figure img {
+main section figure img {
   display: block !important;
-  margin: 0 auto !important;
   width: 100% !important;
   max-width: 700px !important;
   height: auto !important;
-  object-fit: contain;
+  object-fit: contain !important;
+  margin: 0 auto !important;
 }
