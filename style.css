@@ -13,7 +13,6 @@
 html {
   /* Let form elements, checkboxes, etc. use the accent color */
   accent-color: var(--color-accent);
-
   /* Supports both light & dark modes for user preference */
   color-scheme: light dark;
 }
@@ -21,20 +20,15 @@ html {
 body {
   /* Keep a comfortable base font size (~18px) and line-height 1.5 */
   font: 112.5%/1.5 system-ui;
-
-  /* 
-    Use clamp() so the body can grow with the screen size:
-      - Minimum width: 80ch (don’t shrink below 80 characters wide)
-      - Ideal scenario: 90vw (90% of the viewport width)
-      - Maximum width: 120ch (don’t exceed ~120 characters wide)
+  /* Use clamp() so the body can grow with the screen size:
+     - Minimum width: 80ch (don’t shrink below 80 characters wide)
+     - Ideal scenario: 90vw (90% of the viewport width)
+     - Maximum width: 120ch (don’t exceed ~120 characters wide)
   */
   max-width: clamp(80ch, 90vw, 120ch);
-
-  /* Center the content horizontally, and add some padding so text
-     doesn’t hug the edges on smaller screens */
+  /* Center the content horizontally, and add some padding so text doesn’t hug the edges on smaller screens */
   margin: 0 auto;
   padding: 1em;
-
   background-color: #f9f9f9;
   color: #333;
 }
@@ -51,7 +45,6 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  /* Increase heading contrast; you can tweak bigger if you like */
   font-size: 2rem;
   margin: 0.5em 0;
 }
@@ -64,20 +57,12 @@ h2 {
 /* ------------------------------------------------------
    3. Navigation
 ------------------------------------------------------ */
-/* If using <ul> and <li> in <nav>, you can remove default list styling like so:
-nav ul,
-nav li {
-  display: contents;
-}
-*/
-
 nav {
   display: flex;
   justify-content: space-around;
   align-items: center;
   padding: 1em 0;
   margin-bottom: 1em;
-
   background-color: #ffffff;
   --border-color: oklch(50% 10% 200 / 40%);
   border-bottom: 1px solid var(--border-color);
@@ -180,11 +165,6 @@ nav a:hover {
    5. Projects Page (Responsive Grid)
 ------------------------------------------------------ */
 .projects {
-  /* 
-    Use a grid that adapts to screen width:
-      - auto-fill places as many columns as fit
-      - each column is min 15em wide, or 1fr if bigger
-  */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1.5em;
@@ -194,11 +174,6 @@ nav a:hover {
 
 .projects article {
   display: grid;
-  /* If you want each article to align rows across columns, you could do:
-     grid-template-rows: subgrid;
-     grid-row: span 3;
-     (Subgrid is still partial support in older browsers.)
-  */
   background-color: #ffffff;
   border-radius: 0.8em;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -237,7 +212,6 @@ nav a:hover {
   text-align: center;
 }
 
-/* Candidate info (direct children of .resume) forced to pink */
 .resume > h1 {
   color: #ff69b4;
   font-size: 1.8em;
@@ -248,7 +222,6 @@ nav a:hover {
   color: #ff69b4;
 }
 
-/* Other resume content remains as defined */
 .resume .intro {
   display: flex;
   justify-content: center;
@@ -313,7 +286,6 @@ nav a:hover {
    8. Home Page Header Styling
 ------------------------------------------------------ */
 .home-header {
-  /* We still clamp the overall width from body, but you can remove max-width if you prefer full width. */
   width: 100%;
   max-width: 100ch;
   margin: 0 auto 2em auto;
@@ -381,7 +353,7 @@ html-dark-mode .resume li {
   color: #f9f9f9;
 }
 
-/* But force the candidate name and candidate info (direct children) to be pink */
+/* Force the candidate name and candidate info (direct children) to be pink in dark mode */
 html.dark-mode .resume > h1,
 html.dark-mode .resume > p > strong {
   color: #ff69b4 !important;
@@ -390,4 +362,21 @@ html.dark-mode .resume > p > strong {
 html.light-mode body {
   background-color: #f9f9f9;
   color: #333;
+}
+
+/* ------------------------------------------------------
+   11. Constrain Figures and Images
+------------------------------------------------------ */
+figure {
+  max-width: 700px;
+  margin: 2em auto;
+}
+
+figure img {
+  display: block;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+  object-fit: contain;
 }
