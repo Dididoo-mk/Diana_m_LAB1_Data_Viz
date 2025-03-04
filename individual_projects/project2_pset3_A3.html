@@ -180,21 +180,39 @@
       Another idea is to overlay a line chart within the radial structure to depict the overall trend alongside the bars.
     </p>
 
-    <h3>Redesigned Visualization: Designing a Compelling Data Story</h3>
+    <h2>Redesigned Visualization: Designing a Compelling Data Story</h2>
     <figure style="width:100%; margin:2em auto; overflow:hidden;">
       <img src="../images/maybe_covid_waves_visualization.jpg" alt="Radial Bar Chart" style="display:block; width:100%; height:auto; object-fit:contain; margin:0 auto;">
       <figcaption>US COVID-19 Pandemic: The Four Major Waves (2020-2022)</figcaption>
     </figure>
-    <p>
-      When redesigning this visualization, my main goal was to make the progression of the COVID-19 pandemic clearer. The original spiral design was striking, but it made direct comparisons difficult. I shifted to a more traditional time-series area chart to emphasize overall patterns and major surges, using a 7-day moving average to smooth daily fluctuations. Color coding for different waves and vertical markers for key events were also introduced to enhance clarity and context.
-    </p>
-    <p>
-      This design aims to blend data clarity with storytelling, making it easier for viewers to grasp the scale and timing of the pandemic’s surges while providing contextual information.
-    </p>
-    <p>
-      The code is attached at the bottom for anyone interested in building on this work.
-    </p>
+    
 
+    <p>My main goal with this redesign was to create a clear and intuitive visualization of the four major COVID-19 waves in the U.S. from 2020 to 2022. I decided to move away from the original spiral format and use a more conventional time-series area chart that makes comparisons across time easier and more interpretable. While the original design highlighted the cyclical nature of the pandemic, I found that it introduced distortions that made it difficult to compare the scale of waves accurately. My focus was on improving readability so that viewers could immediately grasp the timing and magnitude of each surge. I also applied a <span class="highlight">7-day moving average</span> to smooth out reporting inconsistencies while maintaining the key trends, ensuring that the visualization effectively communicates broader pandemic patterns rather than short-term fluctuations.</p>
+    
+
+    
+    <p>To make the phases of the pandemic distinct, I used <span class="highlight">color coding</span>—purple for the First Wave, green for the Delta Wave, yellow for Omicron, and orange for Later Waves. This choice helps differentiate the different waves while also maintaining their connection to the overall progression of the pandemic. For the horizontal axis, I chose to represent time in quarters (<span class="highlight">Q1, Q2, Q3, and Q4</span>), which are standard fiscal and calendar divisions of the year:</p>
+    
+    <ul>
+        <li><strong>Q1:</strong> January to March</li>
+        <li><strong>Q2:</strong> April to June</li>
+        <li><strong>Q3:</strong> July to September</li>
+        <li><strong>Q4:</strong> October to December</li>
+    </ul>
+    
+    <p>I found that using this quarter-based format made it easier to compare trends across years in a structured way. The vertical axis represents <span class="highlight">daily new cases</span> (averaged over 7 days), which provides a clearer measure of the pandemic’s severity at different points in time.</p>
+    
+  
+    
+    <p>To add more context, I included <span class="highlight">vertical reference lines</span> marking important milestones, such as the declaration of a national emergency, the first vaccine rollout, and the identification of major variants. By incorporating these annotations, I wanted to make it easier to connect public health events with shifts in case trends. I chose an <span class="highlight">area chart</span> instead of a line graph because I wanted to emphasize the scale of each wave—particularly the dramatic spike during the Omicron wave—without cluttering the visualization with too many overlapping lines.</p>
+    
+    <h2>Trade-offs & Future Considerations</h2>
+    
+    <p>Although I believe this redesign significantly improves readability, I had to make some trade-offs. Focusing on broader pandemic trends meant that some finer details—such as short-lived fluctuations and daily volatility—became less prominent. Additionally, while I personally find the quarter-based timeline effective, some viewers who are unfamiliar with Q1-Q4 notation might need a moment to interpret the divisions. However, I think the overall visualization successfully tells the story of the pandemic’s progression while balancing clarity, accuracy, and context.</p>
+    
+    <p>Going through this <span class="highlight">critique by redesign</span> process, I realized just how challenging it is to capture both macro and micro trends in a single visualization. While this design resolves many of the interpretability issues in the original, I see potential for future improvements. I’d love to explore <span class="highlight">interactive features</span> that allow users to zoom into specific time periods or highlight particular data points while maintaining the broad overview. This project reinforced the importance of balancing aesthetics with clarity, and I’m excited to continue refining this approach in future work.</p>
+
+    <p>I am going to attach my code at the bottom of this page - so anyone who wants to improve or build up on it is welcome!</p>
     <!-- Back Link to Projects -->
     <p><a href="../projects/index.html">&larr; Back to Projects</a></p>
   </main>
