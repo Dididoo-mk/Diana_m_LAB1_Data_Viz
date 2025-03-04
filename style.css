@@ -11,38 +11,47 @@
    2. Base and Global Styles
 ------------------------------------------------------ */
 html {
+  /* Let form elements, checkboxes, etc. use the accent color */
   accent-color: var(--color-accent);
-  color-scheme: light dark; /* Supports both light & dark modes */
+
+  /* Supports both light & dark modes for user preference */
+  color-scheme: light dark;
 }
 
 body {
-  /* Increased base font from 100% (~16px) to 112.5% (~18px) for larger text */
+  /* Slightly larger base font (112.5% ~ 18px) and comfortable line-height */
   font: 112.5%/1.5 system-ui;
-  /* Narrower text column for better readability (reduced from 100ch to 60ch) */
-  max-width: 60ch;
-  margin-left: max(1em, calc((100% - 60ch) / 2));
-  margin-right: max(1em, calc((100% - 60ch) / 2));
+
+  /* Increase max-width to 100ch so it’s not too narrow or “zoomed out” */
+  max-width: 100ch;
+
+  /* Center the content, ensuring at least 1em margin on small screens */
+  margin-inline: max(1em, calc((100% - 100ch) / 2));
+
+  /* Add some padding so text doesn't hug the edges */
   padding: 1em;
+
   background-color: #f9f9f9;
   color: #333;
 }
 
+/* Keep images responsive */
 img {
   max-width: 100%;
   height: auto;
 }
 
+/* Headings: keep a tight line-height, but not huge */
 h1, h2, h3, h4, h5, h6 {
   line-height: 1.1;
 }
 
-/* Reduced from 4rem to 2rem to avoid overly large headings */
 h1 {
+  /* Reduced from super-large to 2rem for clarity */
   font-size: 2rem;
   margin: 0.5em 0;
 }
 
-/* Keeping h2 at 1.5rem for a clear hierarchy */
 h2 {
   font-size: 1.5rem;
   margin: 0.5em 0;
@@ -57,11 +66,13 @@ nav {
   align-items: center;
   padding: 1em 0;
   margin-bottom: 1em;
+
   background-color: #ffffff;
   --border-color: oklch(50% 10% 200 / 40%);
   border-bottom: 1px solid var(--border-color);
 }
 
+/* Navigation links take up equal space */
 nav a {
   flex: 1;
   text-decoration: none;
@@ -71,6 +82,7 @@ nav a {
   transition: all 0.3s ease-in-out;
 }
 
+/* Current page link is highlighted with a thicker border */
 nav a.current {
   color: var(--current-page-color);
   border-bottom: 0.4em solid var(--border-color);
@@ -78,6 +90,7 @@ nav a.current {
   font-weight: bold;
 }
 
+/* Hover effect uses the accent color */
 nav a:hover {
   border-bottom: 0.4em solid var(--color-accent);
   background-color: color-mix(in oklch, var(--color-accent), canvas 85%);
@@ -95,12 +108,14 @@ nav a:hover {
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
 }
 
+/* Let form controls inherit the same font as body */
 .contact-form input,
 .contact-form textarea,
 .contact-form button {
   font: inherit;
 }
 
+/* Simple grid for label-input alignment */
 .contact-form form {
   display: grid;
   grid-template-columns: auto 1fr;
@@ -132,6 +147,7 @@ nav a:hover {
   height: 5rem;
 }
 
+/* Send button spans full width */
 .contact-form form button {
   grid-column: 1 / -1;
   width: 100%;
@@ -151,20 +167,26 @@ nav a:hover {
 }
 
 /* ------------------------------------------------------
-   5. Projects Page
+   5. Projects Page (Responsive Grid)
 ------------------------------------------------------ */
 .projects {
+  /* Let the grid fill up to 100ch (the body’s max-width),
+     and adapt columns automatically. */
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15em, 1fr));
   gap: 1.5em;
   padding: 2em;
-  margin: auto;
+  margin: auto; /* Center if narrower than 100ch, or fill if wide enough */
 }
 
+/* Use subgrid for rows if you want headings & images to align across columns */
 .projects article {
   display: grid;
-  grid-template-rows: subgrid;
-  grid-row: span 3;
+  /* If you want each article to align its rows across columns, you can use subgrid:
+     grid-template-rows: subgrid;
+     grid-row: span 3; 
+     (But subgrid might not be fully supported in older browsers.)
+  */
   background-color: #ffffff;
   border-radius: 0.8em;
   box-shadow: 0 4px 10px rgba(0,0,0,0.1);
@@ -340,7 +362,7 @@ html.dark-mode .resume-section {
 /* In dark mode, ensure all resume text remains white except for the candidate info */
 html.dark-mode .resume .intro,
 html.dark-mode .resume-content,
-html.dark-mode .resume p,
+html-dark-mode .resume p,
 html-dark-mode .resume ul,
 html-dark-mode .resume li {
   color: #f9f9f9;
