@@ -45,7 +45,7 @@
             <h2>Exploring Alternative Visualizations: Addressing the Spiral’s Limitations</h2>
             <h3>Sketch 1: COVID-19 Case Trends In The U.S. (2020-2022) – Stacked Area Chart</h3>
             <figure>
-				<img src="../images/A3_original.jpg">
+				<img src="../images/A3_10_1.pdf">
 				<figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Stacked Area Chart</figcaption>
 			</figure>
 <h3>Rationale for Design Decisions</h3>
@@ -80,7 +80,7 @@
 
 <h3>Sketch 2: Multi-Line Chart (Small Multiples) – Design Rationale & Reflection</h3>
 <figure>
-    <img src="../images/A3_original.jpg">
+    <img src="../images/A3_10_2.pdf">
     <figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Stacked Area Chart</figcaption>
 </figure>
 
@@ -115,58 +115,45 @@
     <li>Another thing I want to try is adding annotations or markers for key events—like the Omicron and Delta surges. Right now, the chart shows overall trends well, but it could do a better job of highlighting the biggest moments in the pandemic.</li>
 </ul>
 
+<h3>Sketch 3: Radial Bar Chart</h3>
+<figure>
+    <img src="../images/A3_10_3.pdf">
+    <figcaption>COVID-19 Case Trends In The U.S. (2020-2022) – Stacked Area Chart</figcaption>
+</figure>
 
 
-            <h4>The datasets used in this study include:</h4>
-            
-            <ul>
-              <li><strong>Boston Neighborhoods and Zip Codes:</strong> Provides mapping between neighborhoods and zip codes.</li>
-              <li><strong>Census and Corporate Ownership Data:</strong> Contains demographic breakdowns, owner-occupancy rates, corporate ownership rates, and institutionalized population data.</li>
-              <li><strong>Corporate Ownership Over Time:</strong> Tracks corporate ownership rates and owner-occupancy rates across neighborhoods over 20 years.</li>
-            </ul>
-            
-            <h4>Key Variables Analyzed</h4>
-            <ul>
-              <li>Corporate ownership rate (% of properties owned by corporations)</li>
-              <li>Owner-occupancy rate (% of properties occupied by owners)</li>
-              <li>Demographics: Racial breakdowns (Black, Hispanic, White, Asian populations)</li>
-              <li>Housing characteristics: Vacancy rates, total housing units</li>
-            </ul>
-            
-            <p>Even though the datasets don't explicitly provide the number of rental units, we can infer it. The rental units percentage will be equal to 1 - (owner occupancy percentage), while the number of rental units will equal the total number of units multiplied by the rental units percentage.</p>
-            
-            <p>Neither of the provided data sets in .csv have any information on the rates of evictions. However, we were able to extract relevant data from the readings (report) and sources used by the authors of the report.</p>
-			<h3>Overall Analysis Questions</h3>
-			<ol>
-				<li>How does corporate ownership correlate with housing instability?</li>
-				<li>What demographic trends emerge from the eviction data?</li>
-				<li>How can property, census, and court data be integrated to reveal spatial patterns?</li>
-			</ol>
-		</section>
-		<section>
-			<h2>Discoveries & Insights</h2>
-			
-			<h3>Figure 1: Eviction Dynamics Visualization</h3>
-			<figure>
-				<img src="https://vis-society.github.io/labs/2/images/empty.svg" alt="Visualization of eviction dynamics">
-				<figcaption>Visualization of eviction dynamics across neighborhoods.</figcaption>
-			</figure>
-			<p>This figure displays the spatial distribution of eviction filings across different neighborhoods, highlighting areas with higher corporate landlord presence.</p>
-			
-			<h3>Figure 2: Interactive Data Visualization</h3>
-			<figure>
-				<img src="https://via.placeholder.com/400x300" alt="Interactive Data Visualization">
-				<figcaption>Interactive visualizations highlighting key eviction trends.</figcaption>
-			</figure>
-			<p>This interactive visualization allows users to explore various metrics related to eviction trends, facilitating deeper insight into the underlying data.</p>
-			<!-- Additional figures can be added following the same structure -->
-		</section>
-		<section>
-			<h2>Summary</h2>
-			<p>
-				This project integrates Boston property and census data with court eviction filings to explore how corporate ownership correlates with housing instability across neighborhoods. Through detailed data integration and interactive visualizations, the analysis reveals nuanced patterns and trends driven by institutional landlord practices.
-			</p>
-		</section>
+<h3>Why I Chose This Design</h3>
+<ul>
+    <li>I wanted to keep the cyclical feel of the original spiral while making it clearer and easier to compare across years – a radial bar chart works well for this because it separates each year’s data into its own ring.</li>
+    <li>Color choices help distinguish the years while keeping a logical progression.</li>
+    <li>Offsets between the rings ensure that 2020 isn’t hidden, which was a problem in earlier versions.</li>
+</ul>
+
+<h3>What Worked Well?</h3>
+<ul>
+    <li>Keeps the cyclical nature of the data while making trends across years much easier to compare.</li>
+    <li>Seasonality is clear – The January peaks in 2021 and 2022 stand out well.</li>
+    <li>Better readability than the spiral chart – No confusing overlaps, and everything is spaced out clearly.</li>
+    <li>Edge outlines help – They make each bar more distinct, improving contrast.</li>
+</ul>
+
+<h3>What Didn’t Work So Well?</h3>
+<ul>
+    <li>You can’t immediately see exact case numbers, since it’s based on bar height instead of a labeled Y-axis.</li>
+    <li>Radial layouts can exaggerate differences, since bars further out might look disproportionately large.</li>
+</ul>
+
+<h3>Next Steps: Where to Go From Here?</h3>
+<p>I’m thinking that maybe a radial heatmap would work better instead of bars. It could use a color gradient to show case intensity, making it easier to compare months at a glance. Right now, the bars are useful, but they don’t quite capture the smooth rise and fall of cases as well as a heatmap might.</p>
+
+<p>I also want to try a semi-circular version instead of a full circle. A half-circle layout might make it easier to read, since people are more used to looking at timelines from left to right rather than in a full loop.</p>
+
+<p>Another thing I’m considering is overlaying a line chart inside the radial structure. That way, I could still show the overall trend of rising and falling cases while keeping the visual impact of the circular format. Right now, the bars show volume well, but they don’t really track the continuous flow of the pandemic waves.</p>
+
+<p>These are a few things I want to explore next to make the visualization more intuitive, readable, and insightful.</p>
+
+
+
 		<!-- Back Link to Projects -->
 		<p><a href="../projects/index.html">&larr; Back to Projects</a></p>
 	</main>
