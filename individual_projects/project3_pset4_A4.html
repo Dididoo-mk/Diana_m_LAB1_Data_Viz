@@ -6,20 +6,37 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="../style.css">
   <style>
+    body {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 20px;
+      font-family: Arial, sans-serif;
+    }
+
     figure {
       width: 100% !important;
-      margin: 2em auto !important;
+      margin: 2em 0 !important;
       overflow: hidden !important;
       text-align: center;
     }
+
     figure img {
-        display: block !important;
-        width: 90% !important; /* Adjust to control the size */
-        max-width: 800px !important; /* Set a max width for larger screens */
-        height: auto !important;
-        object-fit: contain !important;
-        margin: 0 auto !important;
-      }
+      display: block !important;
+      width: 100% !important; /* Full width for maximum visibility */
+      max-width: 100% !important; 
+      height: auto !important;
+      object-fit: contain !important;
+      margin: 0 auto !important;
+    }
+
+    figcaption {
+      margin-top: 0.5em;
+      font-style: italic;
+    }
+
+    h2, h3 {
+      margin-top: 1.5em;
+    }
   </style>
 </head>
 <body>
@@ -35,56 +52,37 @@
     <section>
       <h2>Introduction</h2>
       <p>
-        In this assignment, we were tasked with exploring the persuasive and potentially deceptive power of data visualization. Our goal was to create two contrasting visualizations — one that convincingly supports a chosen proposition and one that challenges it — using design techniques that range from earnest to subtly manipulative. After analyzing abortion data from the Guttmacher Institute, I chose the following proposition:
+        This assignment explores the persuasive and potentially deceptive power of data visualization. The goal was to create two contrasting visualizations — one supporting and one challenging a given proposition — using different visual techniques. After analyzing abortion data from the Guttmacher Institute, I chose the following proposition:
       </p>
-      <p> <strong>Proposition:</strong>  "The closure of abortion clinics significantly reduces abortion rates." </p>
-    </section>
-    ,<section>
-      <h2>"The closure of abortion clinics significantly reduces abortion rates"</h2>
-      <p>I chose this proposition because it presents a highly charged and politically relevant topic that has been the focus of public debate and policy-making in the United States. With reproductive rights and access to healthcare being deeply contested issues, exploring this dataset allowed me to investigate the role of data visualization in shaping public perception. The correlation between clinic closures and abortion rates is often cited in media and political discourse, yet this relationship is far more complex than it initially appears.</p>
-    
-      <p> By selecting this proposition, I aimed to explore how visual framing could amplify or obscure this complexity. Through careful design decisions, I sought to examine whether visualizing certain data patterns could mislead viewers into believing a direct causal link — even when the reality may be driven by broader social, economic, and policy factors. This choice not only provided an opportunity to analyze nuanced data but also underscored the ethical implications of visualization in politically sensitive contexts. </p>
+      <p> <strong>Proposition:</strong> "The closure of abortion clinics significantly reduces abortion rates." </p>
     </section>
 
     <section>
       <h2>Supporting Visualization: The Vanishing Clinics Effect</h2>
-      <p> This bar chart compares the percentage change in the number of abortion clinics with the percentage change in abortion rates across selected states from 2017 to 2020. By placing these two metrics side by side, it highlights a pattern: where clinic closures have been more pronounced, abortion rates have also tended to decrease. In particular, Missouri’s dramatic reduction in both clinics and abortion rates underscores the potential impact that reduced clinic availability can have on overall abortion rates.  </p>
+      <p> This visualization compares the percentage change in the number of abortion clinics with the percentage change in abortion rates from 2017 to 2020. By placing these two metrics side by side, a pattern emerges: states with notable clinic closures also saw declines in abortion rates. Missouri, in particular, shows a dramatic reduction in both.</p>
       <figure>
-        <img src="../images/A4_image_(4).png" alt="1">
-        <figcaption>closure of Abortion Clinics reduces Abortion Rates</figcaption>
+        <img src="../images/A4_image_(4).png" alt="The Vanishing Clinics Effect">
+        <figcaption>Closure of Abortion Clinics reduces Abortion Rates</figcaption>
       </figure>
-
-    
-
-
-      <h3>Design Decisions and Rationale</h3> <ul> <li><strong>Selective State Inclusion</strong><br> <strong>Score: -2 (very deceptive)</strong> <ul> <li>I focused on nine states—Connecticut, Delaware, Iowa, Louisiana, Massachusetts, Missouri, Rhode Island, Tennessee, and Washington—where clinic closures coincide with notable declines in abortion rates. This choice spotlights a clear downward trend, making the overall argument appear stronger.</li> <li>Highlighting these states creates a coherent narrative of clinic closures seemingly driving down abortion rates.</li> <li>Excluding states where the trend is less pronounced omits potentially important data and weakens the chart’s overall representativeness.</li> </ul> </li> <li><strong>Use of Side-by-Side Bar Charts</strong><br> <strong>Score: +1 (somewhat earnest)</strong> <ul> <li>Presenting the percentage change in the number of clinics (red bars) next to the percentage change in abortion rates (blue bars) creates a straightforward visual comparison. This makes it easier for viewers to see potential correlations at a glance.</li> <li>The direct comparison helps underscore the relationship between fewer clinics and lower abortion rates.</li> <li>Other chart types, like scatter plots, could have provided a nuanced view of correlation, but might have been less immediately persuasive.</li> </ul> </li> <li><strong>The Use of Extreme Outliers</strong><br> <strong>Score: -1.5 (deceptive)</strong> <ul> <li>Missouri stands out with a -67% change in clinics and a -98% change in abortion rates, the most dramatic figures in the chart.</li> <li>This extreme case powerfully illustrates the potential magnitude of impact.</li> <li>Overemphasizing one outlier may skew perceptions about how typical such an extreme shift is.</li> </ul> </li> <li><strong>Omission and Truncation of the Y-Axis</strong><br> <strong>Score: -0.5 (deceptive)</strong> <ul> <li>Removing a traditional y-axis forces viewers to rely on the numerical labels beneath each bar, intensifying the impact of the percentage changes. It also conceals the true scale of differences among states.</li> <li>This approach streamlines the chart and keeps attention on the core comparison of percentage changes.</li> <li>It can mislead viewers about the relative magnitude of changes, as there’s no baseline reference for scale.</li> </ul> </li> <li><strong>Causal Framing in the Title</strong><br> <strong>Score: -2 (highly deceptive)</strong> <ul> <li>The title “Closure of abortion clinics reduces abortion rates” implies a direct cause-and-effect relationship, even though the chart only shows a correlation. This strong wording steers viewers toward a particular conclusion.</li> <li>It captures attention and aligns with a persuasive objective.</li> <li>It oversimplifies the data by presenting correlation as causation, which can be misleading.</li> </ul> </li> </ul>
     </section>
 
     <section>
       <h2>Opposing Visualization: Resilient Trends in Abortion Access</h2>
-      <p> </p>
-
+      <p> This visualization highlights states where abortion rates increased or remained stable despite clinic closures, suggesting that access patterns may be more complex than they appear. </p>
       <figure>
-        <img src="../images/A4_image_(5).png" alt="1">
-        <figcaption>Closure of abortion clinics does not reduce abortion rates</figcaption>
+        <img src="../images/A4_image_(5).png" alt="Resilient Trends in Abortion Access">
+        <figcaption>Closure of Abortion Clinics does not reduce Abortion Rates</figcaption>
       </figure>
-
-      <p>
-       
-      </p>
-
-      <h3>Design Decisions and Rationale</h3> <ul> <li><strong>Color Choice for Abortion Rate Changes</strong><br> <strong>Score: 0 (neutral)</strong> <ul> <li>The choice of blue for abortion rate changes helps maintain neutrality. If the chart had used red, it could have framed an increase in abortion rates as something negative, whereas green could have implied it was something positive. Blue, being a neutral color, avoids these implicit biases and allows viewers to interpret the data without emotional cues.</li> <li>The neutral color choice ensures the visualization remains descriptive rather than prescriptive, letting viewers draw their own conclusions.</li> <li>Some viewers might still associate blue with political or ideological biases, though this is less extreme than red or green.</li> </ul> </li> <li><strong>Selective State Inclusion</strong><br> <strong>Score: -2 (deceptive)</strong> <ul> <li>This chart includes states—Arkansas, Florida, Georgia, Maryland, New York, Pennsylvania, and South Carolina—where abortion rates either increased or showed minimal change despite clinic closures. This selection intentionally challenges the assumption that clinic closures directly lead to reduced abortion rates.</li> <li>The choice of states effectively presents a counter-narrative, showing that abortion rates can remain stable or even increase despite fewer clinics.</li> <li>The exclusion of states that do show a strong correlation between clinic closures and abortion rate declines limits the broader applicability of the argument.</li> </ul> </li> <li><strong>Composition: Use of Bars Extending Above and Below the X-Axis</strong><br> <strong>Score: +1 (somewhat earnest)</strong> <ul> <li>The chart deliberately uses bars extending both below and above the x-axis to visually separate the two data categories:</li> <li>Red bars (clinic closures) drop below the axis, reinforcing the idea of a decline.</li> <li>Blue bars (abortion rate changes) rise above or stay close to the x-axis, making increases and minimal changes stand out.</li> <li>This design makes it easy to compare the two variables at a glance, emphasizing that despite clinic closures (red), abortion rates (blue) did not consistently decrease. The upward movement of blue bars in states like Georgia and New York stands out.</li> <li>Viewers unfamiliar with this format might interpret the upward blue bars as an indicator of something inherently “positive” rather than just a data representation.</li> <li>Like the previous chart, this one omits a full y-axis, forcing viewers to rely on the numerical labels. This makes percentage changes appear more dramatic without giving context to absolute values. This design choice ensures that viewers focus on relative changes rather than getting distracted by raw numbers.</li> </ul> </li> <li><strong>Highlighting Outliers</strong><br> <strong>Score: -1.5 (selective & deceptive)</strong> <ul> <li>Georgia and New York stand out because their abortion rates increased (+12% and +10%) despite clinic closures. This effectively supports the argument that fewer clinics do not necessarily mean fewer abortions.</li> <li>These outliers make the case more compelling by demonstrating a clear contradiction to the assumed cause-and-effect relationship.</li> <li>Overemphasizing these examples might lead viewers to generalize from a few cases rather than consider the broader dataset.</li> </ul> </li> <li><strong>The Title</strong><br> <strong>Score: -2 (highly deceptive)</strong> <ul> <li>The title, “Closure of abortion clinics does not reduce abortion rates,” suggests a definitive conclusion that the data does not fully support.</li> <li>The strong wording directly challenges a common assumption, making the visualization more persuasive.</li> <li>The title implies that clinic closures have no impact at all, which oversimplifies a complex issue with many contributing factors.</li> </ul> </li> </ul>
-
-      
-
-    
     </section>
 
     <section>
       <h2>Final Reflection</h2>
-      
-      <p> I deliberately chose to keep the design for both charts similar to each other to showcase and highlight that the manipulation of the same dataset—through selective curation and strategic framing—can result in entirely different agendas and conclusions. By adjusting variables such as state inclusion, axis presentation, and title framing, these two visualizations tell opposing stories using the same underlying data. This demonstrates how powerful visual choices can shape perception, influencing the viewer’s takeaway without altering the actual figures. </p> <p> <strong>In my opinion, the biggest form of manipulation in these charts was the selection of data.</strong> By including only certain states in each visualization, I was able to shape the narrative to either support or refute the claim that clinic closures reduce abortion rates. The first chart, <em>“Closure of abortion clinics reduces abortion rates,”</em> focused on states where clinic closures coincided with declining abortion rates, making the argument appear stronger. The second chart, <em>“Closure of abortion clinics does not reduce abortion rates,”</em> highlighted states where abortion rates remained stable or increased despite closures, challenging the first chart’s message. Neither visualization is necessarily <em>false</em>, but both are <strong>highly curated</strong>, leaving out critical data that could complicate the conclusions. </p> <p> Beyond data selection, other design choices played a role in shaping perception. The use of <strong>blue for abortion rate changes</strong> was a deliberate decision to maintain neutrality, avoiding the emotional cues that red (negative) or green (positive) might trigger. However, <strong>causal wording in the titles</strong>, <strong>omission of a full y-axis</strong>, and <strong>the placement of bars above and below the x-axis</strong> all influenced how viewers processed the information. This process reinforced that <strong>ethical visualization is not just about truthfulness in data representation but also about transparency in methodology</strong>. </p> <p> A visualization can be accurate yet misleading if it omits critical context, exaggerates differences, or suggests causality where none is proven. The distinction between “acceptable persuasion” and “misleading manipulation” lies in how openly the visualization presents its assumptions—<strong>selective data choices are inevitable, but deliberately obscuring alternative interpretations crosses an ethical boundary</strong>. These charts illustrate just how easy it is to craft a compelling yet biased narrative simply by <strong>choosing what to show—and what to leave out</strong>. </p>
-
+      <p>
+        By keeping both visualizations similar in design, I aimed to emphasize how manipulative techniques — like selective data inclusion, altered axis scales, and provocative titles — can dramatically change the narrative. The same dataset can be presented to either reinforce or contradict a given claim. The biggest manipulation in both charts lies in the selective choice of data, which was curated to push the intended argument.
+      </p>
+      <p>
+        While one visualization highlights states with a strong correlation between clinic closures and declining abortion rates, the other highlights states with no clear pattern. These opposing narratives demonstrate how data visualizations can shape public perception. Ethical data visualization requires not just accuracy but transparency in the methods used to present data.
+      </p>
     </section>
 
     <p><a href="../projects/index.html">&larr; Back to Projects</a></p>
@@ -95,4 +93,3 @@
   </footer>
 </body>
 </html>
-
